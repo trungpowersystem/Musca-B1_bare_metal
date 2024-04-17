@@ -1,0 +1,89 @@
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu softvfp
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.align	1
+  19              		.global	main
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	main:
+  25              	.LFB3:
+  26              		.file 1 "./Source/main.c"
+   1:./Source/main.c **** #include "stdio.h"
+   2:./Source/main.c **** 
+   3:./Source/main.c **** int main(void)
+   4:./Source/main.c **** {
+  27              		.loc 1 4 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_register 7
+   5:./Source/main.c ****     __asm volatile ("LDR R1, =#0x20001000");
+  39              		.loc 1 5 5
+  40              		.syntax unified
+  41              	@ 5 "./Source/main.c" 1
+  42 0004 0349     		LDR R1, =#0x20001000
+  43              	@ 0 "" 2
+   6:./Source/main.c ****     __asm volatile ("LDR R2, =#0x20001004");
+  44              		.loc 1 6 5
+  45              	@ 6 "./Source/main.c" 1
+  46 0006 044A     		LDR R2, =#0x20001004
+  47              	@ 0 "" 2
+   7:./Source/main.c ****     __asm volatile ("LDR R0, [R1]");
+  48              		.loc 1 7 5
+  49              	@ 7 "./Source/main.c" 1
+  50 0008 0868     		LDR R0, [R1]
+  51              	@ 0 "" 2
+   8:./Source/main.c ****     __asm volatile ("LDR R1, [R2]");
+  52              		.loc 1 8 5
+  53              	@ 8 "./Source/main.c" 1
+  54 000a 1168     		LDR R1, [R2]
+  55              	@ 0 "" 2
+   9:./Source/main.c ****     __asm volatile ("ADD R0, R0, R1");
+  56              		.loc 1 9 5
+  57              	@ 9 "./Source/main.c" 1
+  58 000c 0844     		ADD R0, R0, R1
+  59              	@ 0 "" 2
+  10:./Source/main.c ****     __asm volatile ("STR R0, [R2]");
+  60              		.loc 1 10 5
+  61              	@ 10 "./Source/main.c" 1
+  62 000e 1060     		STR R0, [R2]
+  63              	@ 0 "" 2
+  64              		.thumb
+  65              		.syntax unified
+  66              	.L2:
+  11:./Source/main.c ****     for(;;);
+  67              		.loc 1 11 5 discriminator 1
+  68 0010 FEE7     		b	.L2
+  69              		.cfi_endproc
+  70              	.LFE3:
+  72              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccx6AvAj.s:18     .text:00000000 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccx6AvAj.s:24     .text:00000000 main
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccx6AvAj.s:73     .text:00000012 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccx6AvAj.s:288    .text:00000014 $d
+
+NO UNDEFINED SYMBOLS

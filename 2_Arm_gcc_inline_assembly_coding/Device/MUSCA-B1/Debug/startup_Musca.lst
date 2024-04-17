@@ -1,0 +1,1943 @@
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu softvfp
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"startup_Musca-B1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__Vectors
+  19              		.section	.vectors,"a"
+  20              		.align	2
+  23              	__Vectors:
+  24 0000 00000000 		.word	__StackTop
+  25 0004 00000000 		.word	Reset_Handler
+  26 0008 00000000 		.word	NMI_Handler
+  27 000c 00000000 		.word	HardFault_Handler
+  28 0010 00000000 		.word	MemManage_Handler
+  29 0014 00000000 		.word	BusFault_Handler
+  30 0018 00000000 		.word	UsageFault_Handler
+  31 001c 00000000 		.word	SecureFault_Handler
+  32 0020 00000000 		.word	0
+  33 0024 00000000 		.word	0
+  34 0028 00000000 		.word	0
+  35 002c 00000000 		.word	SVC_Handler
+  36 0030 00000000 		.word	DebugMon_Handler
+  37 0034 00000000 		.word	0
+  38 0038 00000000 		.word	PendSV_Handler
+  39 003c 00000000 		.word	SysTick_Handler
+  40 0040 00000000 		.word	Interrupt0_Handler
+  41 0044 00000000 		.word	Interrupt1_Handler
+  42 0048 00000000 		.word	Interrupt2_Handler
+  43 004c 00000000 		.word	Interrupt3_Handler
+  44 0050 00000000 		.word	Interrupt4_Handler
+  45 0054 00000000 		.word	Interrupt5_Handler
+  46 0058 00000000 		.word	Interrupt6_Handler
+  47 005c 00000000 		.word	Interrupt7_Handler
+  48 0060 00000000 		.word	Interrupt8_Handler
+  49 0064 00000000 		.word	Interrupt9_Handler
+  50              		.text
+  51              		.align	1
+  52              		.global	Reset_Handler
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  57              	Reset_Handler:
+  58              	.LFB158:
+  59              		.file 1 "./Source/startup_Musca-B1.c"
+   1:./Source/startup_Musca-B1.c **** #include "Musca-B1.h"
+   2:./Source/startup_Musca-B1.c **** 
+   3:./Source/startup_Musca-B1.c **** /*----------------------------------------------------------------------------
+   4:./Source/startup_Musca-B1.c ****   External References
+   5:./Source/startup_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+   6:./Source/startup_Musca-B1.c **** extern uint32_t __INITIAL_SP;
+   7:./Source/startup_Musca-B1.c **** extern uint32_t __STACK_LIMIT;
+   8:./Source/startup_Musca-B1.c **** 
+   9:./Source/startup_Musca-B1.c **** int32_t main(void);
+  10:./Source/startup_Musca-B1.c **** 
+  11:./Source/startup_Musca-B1.c **** /*----------------------------------------------------------------------------
+  12:./Source/startup_Musca-B1.c ****   Internal References
+  13:./Source/startup_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+  14:./Source/startup_Musca-B1.c **** __NO_RETURN void Reset_Handler  (void);
+  15:./Source/startup_Musca-B1.c ****             void Default_Handler(void);
+  16:./Source/startup_Musca-B1.c **** 
+  17:./Source/startup_Musca-B1.c **** /*----------------------------------------------------------------------------
+  18:./Source/startup_Musca-B1.c ****   Exception / Interrupt Handler
+  19:./Source/startup_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+  20:./Source/startup_Musca-B1.c **** /* Exceptions */
+  21:./Source/startup_Musca-B1.c **** void NMI_Handler            (void) __attribute__ ((weak, alias("Default_Handler")));
+  22:./Source/startup_Musca-B1.c **** void HardFault_Handler      (void) __attribute__ ((weak));
+  23:./Source/startup_Musca-B1.c **** void MemManage_Handler      (void) __attribute__ ((weak, alias("Default_Handler")));
+  24:./Source/startup_Musca-B1.c **** void BusFault_Handler       (void) __attribute__ ((weak, alias("Default_Handler")));
+  25:./Source/startup_Musca-B1.c **** void UsageFault_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  26:./Source/startup_Musca-B1.c **** void SecureFault_Handler    (void) __attribute__ ((weak, alias("Default_Handler")));
+  27:./Source/startup_Musca-B1.c **** void SVC_Handler            (void) __attribute__ ((weak, alias("Default_Handler")));
+  28:./Source/startup_Musca-B1.c **** void DebugMon_Handler       (void) __attribute__ ((weak, alias("Default_Handler")));
+  29:./Source/startup_Musca-B1.c **** void PendSV_Handler         (void) __attribute__ ((weak, alias("Default_Handler")));
+  30:./Source/startup_Musca-B1.c **** void SysTick_Handler        (void) __attribute__ ((weak, alias("Default_Handler")));
+  31:./Source/startup_Musca-B1.c **** 
+  32:./Source/startup_Musca-B1.c **** void Interrupt0_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  33:./Source/startup_Musca-B1.c **** void Interrupt1_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  34:./Source/startup_Musca-B1.c **** void Interrupt2_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  35:./Source/startup_Musca-B1.c **** void Interrupt3_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  36:./Source/startup_Musca-B1.c **** void Interrupt4_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  37:./Source/startup_Musca-B1.c **** void Interrupt5_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  38:./Source/startup_Musca-B1.c **** void Interrupt6_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  39:./Source/startup_Musca-B1.c **** void Interrupt7_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  40:./Source/startup_Musca-B1.c **** void Interrupt8_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  41:./Source/startup_Musca-B1.c **** void Interrupt9_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+  42:./Source/startup_Musca-B1.c **** 
+  43:./Source/startup_Musca-B1.c **** #if defined ( __GNUC__ )
+  44:./Source/startup_Musca-B1.c **** #pragma GCC diagnostic push
+  45:./Source/startup_Musca-B1.c **** #pragma GCC diagnostic ignored "-Wpedantic"
+  46:./Source/startup_Musca-B1.c **** #endif
+  47:./Source/startup_Musca-B1.c **** 
+  48:./Source/startup_Musca-B1.c **** extern const VECTOR_TABLE_Type __VECTOR_TABLE[];
+  49:./Source/startup_Musca-B1.c ****        const VECTOR_TABLE_Type __VECTOR_TABLE[] __VECTOR_TABLE_ATTRIBUTE = {
+  50:./Source/startup_Musca-B1.c ****   (VECTOR_TABLE_Type)(&__INITIAL_SP),       /*     Initial Stack Pointer */
+  51:./Source/startup_Musca-B1.c ****   Reset_Handler,                            /*     Reset Handler */
+  52:./Source/startup_Musca-B1.c ****   NMI_Handler,                              /* -14 NMI Handler */
+  53:./Source/startup_Musca-B1.c ****   HardFault_Handler,                        /* -13 Hard Fault Handler */
+  54:./Source/startup_Musca-B1.c ****   MemManage_Handler,                        /* -12 MPU Fault Handler */
+  55:./Source/startup_Musca-B1.c ****   BusFault_Handler,                         /* -11 Bus Fault Handler */
+  56:./Source/startup_Musca-B1.c ****   UsageFault_Handler,                       /* -10 Usage Fault Handler */
+  57:./Source/startup_Musca-B1.c ****   SecureFault_Handler,                      /*  -9 Secure Fault Handler */
+  58:./Source/startup_Musca-B1.c ****   0,                                        /*     Reserved */
+  59:./Source/startup_Musca-B1.c ****   0,                                        /*     Reserved */
+  60:./Source/startup_Musca-B1.c ****   0,                                        /*     Reserved */
+  61:./Source/startup_Musca-B1.c ****   SVC_Handler,                              /*  -5 SVCall Handler */
+  62:./Source/startup_Musca-B1.c ****   DebugMon_Handler,                         /*  -4 Debug Monitor Handler */
+  63:./Source/startup_Musca-B1.c ****   0,                                        /*     Reserved */
+  64:./Source/startup_Musca-B1.c ****   PendSV_Handler,                           /*  -2 PendSV Handler */
+  65:./Source/startup_Musca-B1.c ****   SysTick_Handler,                          /*  -1 SysTick Handler */
+  66:./Source/startup_Musca-B1.c **** 
+  67:./Source/startup_Musca-B1.c ****   /* Interrupts */
+  68:./Source/startup_Musca-B1.c ****   Interrupt0_Handler,                       /*   0 Interrupt 0 */
+  69:./Source/startup_Musca-B1.c ****   Interrupt1_Handler,                       /*   1 Interrupt 1 */
+  70:./Source/startup_Musca-B1.c ****   Interrupt2_Handler,                       /*   2 Interrupt 2 */
+  71:./Source/startup_Musca-B1.c ****   Interrupt3_Handler,                       /*   3 Interrupt 3 */
+  72:./Source/startup_Musca-B1.c ****   Interrupt4_Handler,                       /*   4 Interrupt 4 */
+  73:./Source/startup_Musca-B1.c ****   Interrupt5_Handler,                       /*   5 Interrupt 5 */
+  74:./Source/startup_Musca-B1.c ****   Interrupt6_Handler,                       /*   6 Interrupt 6 */
+  75:./Source/startup_Musca-B1.c ****   Interrupt7_Handler,                       /*   7 Interrupt 7 */
+  76:./Source/startup_Musca-B1.c ****   Interrupt8_Handler,                       /*   8 Interrupt 8 */
+  77:./Source/startup_Musca-B1.c ****   Interrupt9_Handler                        /*   9 Interrupt 9 */
+  78:./Source/startup_Musca-B1.c ****                                             /* Interrupts 10 .. 480 are left out */
+  79:./Source/startup_Musca-B1.c **** };
+  80:./Source/startup_Musca-B1.c **** 
+  81:./Source/startup_Musca-B1.c **** #if defined ( __GNUC__ )
+  82:./Source/startup_Musca-B1.c **** #pragma GCC diagnostic pop
+  83:./Source/startup_Musca-B1.c **** #endif
+  84:./Source/startup_Musca-B1.c **** 
+  85:./Source/startup_Musca-B1.c **** /*----------------------------------------------------------------------------
+  86:./Source/startup_Musca-B1.c ****   Reset Handler called on controller reset
+  87:./Source/startup_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+  88:./Source/startup_Musca-B1.c **** __NO_RETURN void Reset_Handler(void)
+  89:./Source/startup_Musca-B1.c **** {
+  60              		.loc 1 89 1
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 16
+  63              		@ frame_needed = 1, uses_anonymous_args = 0
+  64 0000 80B5     		push	{r7, lr}
+  65              	.LCFI0:
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 7, -8
+  68              		.cfi_offset 14, -4
+  69 0002 84B0     		sub	sp, sp, #16
+  70              	.LCFI1:
+  71              		.cfi_def_cfa_offset 24
+  72 0004 00AF     		add	r7, sp, #0
+  73              	.LCFI2:
+  74              		.cfi_def_cfa_register 7
+  90:./Source/startup_Musca-B1.c ****   __set_PSP((uint32_t)(&__INITIAL_SP));
+  75              		.loc 1 90 3
+  76 0006 0B4B     		ldr	r3, .L3
+  77 0008 7B60     		str	r3, [r7, #4]
+  78              	.LBB8:
+  79              	.LBB9:
+  80              		.file 2 "./../../CMSIS/Core/Include/cmsis_gcc.h"
+   1:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * @version  V5.4.2
+   5:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * @date     17. December 2022
+   6:./../../CMSIS/Core/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:./../../CMSIS/Core/Include/cmsis_gcc.h **** /*
+   8:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2021 Arm Limited. All rights reserved.
+   9:./../../CMSIS/Core/Include/cmsis_gcc.h ****  *
+  10:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:./../../CMSIS/Core/Include/cmsis_gcc.h ****  *
+  12:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:./../../CMSIS/Core/Include/cmsis_gcc.h ****  *
+  16:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:./../../CMSIS/Core/Include/cmsis_gcc.h ****  *
+  18:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+  24:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+  25:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+  28:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:./../../CMSIS/Core/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:./../../CMSIS/Core/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:./../../CMSIS/Core/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:./../../CMSIS/Core/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+  34:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  38:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+  39:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  43:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  46:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  49:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE
+  50:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  52:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  55:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  58:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  61:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  64:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  67:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  70:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:./../../CMSIS/Core/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  78:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  86:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+  94:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 102:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 110:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 113:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 116:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 119:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __NO_INIT
+ 120:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+ 121:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 122:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __ALIAS
+ 123:./../../CMSIS/Core/Include/cmsis_gcc.h ****   #define __ALIAS(x)                             __attribute__ ((alias(x)))
+ 124:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 125:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 126:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 127:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 128:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
+ 129:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 130:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 131:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ 132:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 133:./../../CMSIS/Core/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 134:./../../CMSIS/Core/Include/cmsis_gcc.h ****            in the used linker script.
+ 135:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 136:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 137:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 138:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 139:./../../CMSIS/Core/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ 140:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 141:./../../CMSIS/Core/Include/cmsis_gcc.h ****   typedef struct __copy_table {
+ 142:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t const* src;
+ 143:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 144:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 145:./../../CMSIS/Core/Include/cmsis_gcc.h ****   } __copy_table_t;
+ 146:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 147:./../../CMSIS/Core/Include/cmsis_gcc.h ****   typedef struct __zero_table {
+ 148:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 149:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 150:./../../CMSIS/Core/Include/cmsis_gcc.h ****   } __zero_table_t;
+ 151:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 152:./../../CMSIS/Core/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 153:./../../CMSIS/Core/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 154:./../../CMSIS/Core/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 155:./../../CMSIS/Core/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 156:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 157:./../../CMSIS/Core/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 158:./../../CMSIS/Core/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:./../../CMSIS/Core/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ 160:./../../CMSIS/Core/Include/cmsis_gcc.h ****     }
+ 161:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 162:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 163:./../../CMSIS/Core/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 164:./../../CMSIS/Core/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 165:./../../CMSIS/Core/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 166:./../../CMSIS/Core/Include/cmsis_gcc.h ****     }
+ 167:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 168:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 169:./../../CMSIS/Core/Include/cmsis_gcc.h ****   _start();
+ 170:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 171:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 172:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 173:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 174:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 175:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 176:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 177:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 178:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 179:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 180:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 181:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 182:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 183:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 184:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 185:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 186:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 187:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 188:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute__((used, section(".vectors")))
+ 189:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 190:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 191:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+ 192:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __STACK_SEAL
+ 193:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __STACK_SEAL              __StackSeal
+ 194:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 195:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 196:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __TZ_STACK_SEAL_SIZE
+ 197:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __TZ_STACK_SEAL_SIZE      8U
+ 198:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 199:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 200:./../../CMSIS/Core/Include/cmsis_gcc.h **** #ifndef __TZ_STACK_SEAL_VALUE
+ 201:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __TZ_STACK_SEAL_VALUE     0xFEF5EDA5FEF5EDA5ULL
+ 202:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 203:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 204:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 205:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_STACKSEAL_S (uint32_t* stackTop) {
+ 206:./../../CMSIS/Core/Include/cmsis_gcc.h ****   *((uint64_t *)stackTop) = __TZ_STACK_SEAL_VALUE;
+ 207:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 208:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 209:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 210:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 211:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* ##########################  Core Instruction Access  ######################### */
+ 212:./../../CMSIS/Core/Include/cmsis_gcc.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
+ 213:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Access to dedicated instructions
+ 214:./../../CMSIS/Core/Include/cmsis_gcc.h ****   @{
+ 215:./../../CMSIS/Core/Include/cmsis_gcc.h **** */
+ 216:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 217:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
+ 218:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * For thumb1, use low register (r0-r7), specified by constraint "l"
+ 219:./../../CMSIS/Core/Include/cmsis_gcc.h ****  * Otherwise, use general registers, specified by constraint "r" */
+ 220:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if defined (__thumb__) && !defined (__thumb2__)
+ 221:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
+ 222:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+l" (r)
+ 223:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "l" (r)
+ 224:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 225:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
+ 226:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_RW_REG(r) "+r" (r)
+ 227:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
+ 228:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 229:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 230:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 231:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   No Operation
+ 232:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details No Operation does nothing. This instruction can be used for code alignment purposes.
+ 233:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 234:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __NOP()                             __ASM volatile ("nop")
+ 235:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 236:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 237:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
+ 238:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
+ 239:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 240:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __WFI()                             __ASM volatile ("wfi":::"memory")
+ 241:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 242:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 243:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 244:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Wait For Event
+ 245:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Wait For Event is a hint instruction that permits the processor to enter
+ 246:./../../CMSIS/Core/Include/cmsis_gcc.h ****            a low-power state until one of a number of events occurs.
+ 247:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 248:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __WFE()                             __ASM volatile ("wfe":::"memory")
+ 249:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 250:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 251:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 252:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Send Event
+ 253:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+ 254:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 255:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __SEV()                             __ASM volatile ("sev")
+ 256:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 257:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 258:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 259:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
+ 260:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
+ 261:./../../CMSIS/Core/Include/cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
+ 262:./../../CMSIS/Core/Include/cmsis_gcc.h ****            after the instruction has been completed.
+ 263:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 264:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __ISB(void)
+ 265:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 266:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("isb 0xF":::"memory");
+ 267:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 268:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 269:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 270:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 271:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Data Synchronization Barrier
+ 272:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
+ 273:./../../CMSIS/Core/Include/cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
+ 274:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 275:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DSB(void)
+ 276:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 277:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("dsb 0xF":::"memory");
+ 278:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 279:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 280:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 281:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 282:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Data Memory Barrier
+ 283:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Ensures the apparent order of the explicit memory operations before
+ 284:./../../CMSIS/Core/Include/cmsis_gcc.h ****            and after the instruction, without ensuring their completion.
+ 285:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 286:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __DMB(void)
+ 287:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 288:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("dmb 0xF":::"memory");
+ 289:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 290:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 291:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 292:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 293:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Reverse byte order (32 bit)
+ 294:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Reverses the byte order in unsigned integer value. For example, 0x12345678 becomes 0x785
+ 295:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
+ 296:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Reversed value
+ 297:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 298:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __REV(uint32_t value)
+ 299:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 300:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5)
+ 301:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return __builtin_bswap32(value);
+ 302:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 303:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+ 304:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 305:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM ("rev %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
+ 306:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+ 307:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 308:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 309:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 310:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 311:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 312:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Reverse byte order (16 bit)
+ 313:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Reverses the byte order within each halfword of a word. For example, 0x12345678 becomes 
+ 314:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
+ 315:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Reversed value
+ 316:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 317:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __REV16(uint32_t value)
+ 318:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 319:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+ 320:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 321:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM ("rev16 %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
+ 322:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+ 323:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 324:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 325:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 326:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 327:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Reverse byte order (16 bit)
+ 328:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Reverses the byte order in a 16-bit value and returns the signed 16-bit result. For exam
+ 329:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
+ 330:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Reversed value
+ 331:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 332:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE int16_t __REVSH(int16_t value)
+ 333:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 334:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
+ 335:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return (int16_t)__builtin_bswap16(value);
+ 336:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 337:./../../CMSIS/Core/Include/cmsis_gcc.h ****   int16_t result;
+ 338:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 339:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM ("revsh %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
+ 340:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+ 341:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 342:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 343:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 344:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 345:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 346:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Rotate Right in unsigned value (32 bit)
+ 347:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Rotate Right (immediate) provides the value of the contents of a register rotated by a v
+ 348:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    op1  Value to rotate
+ 349:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    op2  Number of Bits to rotate
+ 350:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Rotated value
+ 351:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 352:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __ROR(uint32_t op1, uint32_t op2)
+ 353:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 354:./../../CMSIS/Core/Include/cmsis_gcc.h ****   op2 %= 32U;
+ 355:./../../CMSIS/Core/Include/cmsis_gcc.h ****   if (op2 == 0U)
+ 356:./../../CMSIS/Core/Include/cmsis_gcc.h ****   {
+ 357:./../../CMSIS/Core/Include/cmsis_gcc.h ****     return op1;
+ 358:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 359:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return (op1 >> op2) | (op1 << (32U - op2));
+ 360:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 361:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 362:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 363:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 364:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Breakpoint
+ 365:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Causes the processor to enter Debug state.
+ 366:./../../CMSIS/Core/Include/cmsis_gcc.h ****            Debug tools can use this to investigate system state when the instruction at a particula
+ 367:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    value  is ignored by the processor.
+ 368:./../../CMSIS/Core/Include/cmsis_gcc.h ****                  If required, a debugger can use it to store additional information about the break
+ 369:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 370:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __BKPT(value)                       __ASM volatile ("bkpt "#value)
+ 371:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 372:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 373:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 374:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Reverse bit order of value
+ 375:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Reverses the bit order of the given value.
+ 376:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
+ 377:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Reversed value
+ 378:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 379:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __RBIT(uint32_t value)
+ 380:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 381:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+ 382:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 383:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 384:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 385:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    )
+ 386:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM ("rbit %0, %1" : "=r" (result) : "r" (value) );
+ 387:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 388:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t s = (4U /*sizeof(v)*/ * 8U) - 1U; /* extra shift needed at end */
+ 389:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 390:./../../CMSIS/Core/Include/cmsis_gcc.h ****   result = value;                      /* r will be reversed bits of v; first get LSB of v */
+ 391:./../../CMSIS/Core/Include/cmsis_gcc.h ****   for (value >>= 1U; value != 0U; value >>= 1U)
+ 392:./../../CMSIS/Core/Include/cmsis_gcc.h ****   {
+ 393:./../../CMSIS/Core/Include/cmsis_gcc.h ****     result <<= 1U;
+ 394:./../../CMSIS/Core/Include/cmsis_gcc.h ****     result |= value & 1U;
+ 395:./../../CMSIS/Core/Include/cmsis_gcc.h ****     s--;
+ 396:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 397:./../../CMSIS/Core/Include/cmsis_gcc.h ****   result <<= s;                        /* shift when v's highest bits are zero */
+ 398:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 399:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+ 400:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 401:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 402:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 403:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 404:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Count leading zeros
+ 405:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Counts the number of leading zeros of a data value.
+ 406:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to count the leading zeros
+ 407:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             number of leading zeros in value
+ 408:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 409:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
+ 410:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 411:./../../CMSIS/Core/Include/cmsis_gcc.h ****   /* Even though __builtin_clz produces a CLZ instruction on ARM, formally
+ 412:./../../CMSIS/Core/Include/cmsis_gcc.h ****      __builtin_clz(0) is undefined behaviour, so handle this case specially.
+ 413:./../../CMSIS/Core/Include/cmsis_gcc.h ****      This guarantees ARM-compatible results if happening to compile on a non-ARM
+ 414:./../../CMSIS/Core/Include/cmsis_gcc.h ****      target, and ensures the compiler doesn't decide to activate any
+ 415:./../../CMSIS/Core/Include/cmsis_gcc.h ****      optimisations using the logic "value was passed to __builtin_clz, so it
+ 416:./../../CMSIS/Core/Include/cmsis_gcc.h ****      is non-zero".
+ 417:./../../CMSIS/Core/Include/cmsis_gcc.h ****      ARM GCC 7.3 and possibly earlier will optimise this test away, leaving a
+ 418:./../../CMSIS/Core/Include/cmsis_gcc.h ****      single CLZ instruction.
+ 419:./../../CMSIS/Core/Include/cmsis_gcc.h ****    */
+ 420:./../../CMSIS/Core/Include/cmsis_gcc.h ****   if (value == 0U)
+ 421:./../../CMSIS/Core/Include/cmsis_gcc.h ****   {
+ 422:./../../CMSIS/Core/Include/cmsis_gcc.h ****     return 32U;
+ 423:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 424:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return __builtin_clz(value);
+ 425:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 426:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 427:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 428:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 429:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 430:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+ 431:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
+ 432:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 433:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (8 bit)
+ 434:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 8 bit value.
+ 435:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 436:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             value of type uint8_t at (*ptr)
+ 437:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 438:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint8_t __LDREXB(volatile uint8_t *addr)
+ 439:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 440:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 441:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 442:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
+ 443:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrexb %0, %1" : "=r" (result) : "Q" (*addr) );
+ 444:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 445:./../../CMSIS/Core/Include/cmsis_gcc.h ****     /* Prior to GCC 4.8, "Q" will be expanded to [rx, #0] which is not
+ 446:./../../CMSIS/Core/Include/cmsis_gcc.h ****        accepted by assembler. So has to use following less efficient pattern.
+ 447:./../../CMSIS/Core/Include/cmsis_gcc.h ****     */
+ 448:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrexb %0, [%1]" : "=r" (result) : "r" (addr) : "memory" );
+ 449:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 450:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint8_t) result);    /* Add explicit type cast here */
+ 451:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 452:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 453:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 454:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 455:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (16 bit)
+ 456:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 16 bit values.
+ 457:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 458:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ 459:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 460:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
+ 461:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 462:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 463:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 464:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
+ 465:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrexh %0, %1" : "=r" (result) : "Q" (*addr) );
+ 466:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 467:./../../CMSIS/Core/Include/cmsis_gcc.h ****     /* Prior to GCC 4.8, "Q" will be expanded to [rx, #0] which is not
+ 468:./../../CMSIS/Core/Include/cmsis_gcc.h ****        accepted by assembler. So has to use following less efficient pattern.
+ 469:./../../CMSIS/Core/Include/cmsis_gcc.h ****     */
+ 470:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrexh %0, [%1]" : "=r" (result) : "r" (addr) : "memory" );
+ 471:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 472:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint16_t) result);    /* Add explicit type cast here */
+ 473:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 474:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 475:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 476:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 477:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   LDR Exclusive (32 bit)
+ 478:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a exclusive LDR instruction for 32 bit values.
+ 479:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 480:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
+ 481:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 482:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDREXW(volatile uint32_t *addr)
+ 483:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 484:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 485:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 486:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
+ 487:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 488:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 489:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 490:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 491:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 492:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   STR Exclusive (8 bit)
+ 493:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a exclusive STR instruction for 8 bit values.
+ 494:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 495:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 496:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          0  Function succeeded
+ 497:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          1  Function failed
+ 498:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 499:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
+ 500:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 501:./../../CMSIS/Core/Include/cmsis_gcc.h ****    uint32_t result;
+ 502:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 503:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
+ 504:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 505:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 506:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 507:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 508:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 509:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   STR Exclusive (16 bit)
+ 510:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a exclusive STR instruction for 16 bit values.
+ 511:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 512:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 513:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          0  Function succeeded
+ 514:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          1  Function failed
+ 515:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 516:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
+ 517:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 518:./../../CMSIS/Core/Include/cmsis_gcc.h ****    uint32_t result;
+ 519:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 520:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
+ 521:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 522:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 523:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 524:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 525:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 526:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   STR Exclusive (32 bit)
+ 527:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a exclusive STR instruction for 32 bit values.
+ 528:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 529:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 530:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          0  Function succeeded
+ 531:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          1  Function failed
+ 532:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 533:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
+ 534:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 535:./../../CMSIS/Core/Include/cmsis_gcc.h ****    uint32_t result;
+ 536:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 537:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("strex %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" (value) );
+ 538:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 539:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 540:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 541:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 542:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 543:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Remove the exclusive lock
+ 544:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Removes the exclusive lock which is created by LDREX.
+ 545:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 546:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __CLREX(void)
+ 547:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 548:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("clrex" ::: "memory");
+ 549:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 550:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 551:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 552:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 553:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+ 554:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    ) */
+ 555:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 556:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 557:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 558:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 559:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    )
+ 560:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 561:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Signed Saturate
+ 562:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Saturates a signed value.
+ 563:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  ARG1  Value to be saturated
+ 564:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  ARG2  Bit position to saturate to (1..32)
+ 565:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             Saturated value
+ 566:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 567:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __SSAT(ARG1, ARG2) \
+ 568:./../../CMSIS/Core/Include/cmsis_gcc.h **** __extension__ \
+ 569:./../../CMSIS/Core/Include/cmsis_gcc.h **** ({                          \
+ 570:./../../CMSIS/Core/Include/cmsis_gcc.h ****   int32_t __RES, __ARG1 = (ARG1); \
+ 571:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
+ 572:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __RES; \
+ 573:./../../CMSIS/Core/Include/cmsis_gcc.h ****  })
+ 574:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 575:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 576:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 577:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Unsigned Saturate
+ 578:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Saturates an unsigned value.
+ 579:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  ARG1  Value to be saturated
+ 580:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  ARG2  Bit position to saturate to (0..31)
+ 581:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             Saturated value
+ 582:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 583:./../../CMSIS/Core/Include/cmsis_gcc.h **** #define __USAT(ARG1, ARG2) \
+ 584:./../../CMSIS/Core/Include/cmsis_gcc.h **** __extension__ \
+ 585:./../../CMSIS/Core/Include/cmsis_gcc.h **** ({                          \
+ 586:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t __RES, __ARG1 = (ARG1); \
+ 587:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("usat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
+ 588:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __RES; \
+ 589:./../../CMSIS/Core/Include/cmsis_gcc.h ****  })
+ 590:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 591:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 592:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 593:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Rotate Right with Extend (32 bit)
+ 594:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Moves each bit of a bitstring right by one bit.
+ 595:./../../CMSIS/Core/Include/cmsis_gcc.h ****            The carry input is shifted in at the left end of the bitstring.
+ 596:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    value  Value to rotate
+ 597:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Rotated value
+ 598:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 599:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __RRX(uint32_t value)
+ 600:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 601:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+ 602:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 603:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("rrx %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
+ 604:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+ 605:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 606:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 607:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 608:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 609:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   LDRT Unprivileged (8 bit)
+ 610:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a Unprivileged LDRT instruction for 8 bit value.
+ 611:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 612:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             value of type uint8_t at (*ptr)
+ 613:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 614:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint8_t __LDRBT(volatile uint8_t *ptr)
+ 615:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 616:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 617:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 618:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
+ 619:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrbt %0, %1" : "=r" (result) : "Q" (*ptr) );
+ 620:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 621:./../../CMSIS/Core/Include/cmsis_gcc.h ****     /* Prior to GCC 4.8, "Q" will be expanded to [rx, #0] which is not
+ 622:./../../CMSIS/Core/Include/cmsis_gcc.h ****        accepted by assembler. So has to use following less efficient pattern.
+ 623:./../../CMSIS/Core/Include/cmsis_gcc.h ****     */
+ 624:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrbt %0, [%1]" : "=r" (result) : "r" (ptr) : "memory" );
+ 625:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 626:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint8_t) result);    /* Add explicit type cast here */
+ 627:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 628:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 629:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 630:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 631:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   LDRT Unprivileged (16 bit)
+ 632:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a Unprivileged LDRT instruction for 16 bit values.
+ 633:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 634:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ 635:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 636:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDRHT(volatile uint16_t *ptr)
+ 637:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 638:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 639:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 640:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
+ 641:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrht %0, %1" : "=r" (result) : "Q" (*ptr) );
+ 642:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+ 643:./../../CMSIS/Core/Include/cmsis_gcc.h ****     /* Prior to GCC 4.8, "Q" will be expanded to [rx, #0] which is not
+ 644:./../../CMSIS/Core/Include/cmsis_gcc.h ****        accepted by assembler. So has to use following less efficient pattern.
+ 645:./../../CMSIS/Core/Include/cmsis_gcc.h ****     */
+ 646:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrht %0, [%1]" : "=r" (result) : "r" (ptr) : "memory" );
+ 647:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 648:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint16_t) result);    /* Add explicit type cast here */
+ 649:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 650:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 651:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 652:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 653:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   LDRT Unprivileged (32 bit)
+ 654:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a Unprivileged LDRT instruction for 32 bit values.
+ 655:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 656:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
+ 657:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 658:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDRT(volatile uint32_t *ptr)
+ 659:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 660:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 661:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 662:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
+ 663:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 664:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 665:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 666:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 667:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 668:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   STRT Unprivileged (8 bit)
+ 669:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a Unprivileged STRT instruction for 8 bit values.
+ 670:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 671:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 672:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 673:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRBT(uint8_t value, volatile uint8_t *ptr)
+ 674:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 675:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("strbt %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
+ 676:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 677:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 678:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 679:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 680:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   STRT Unprivileged (16 bit)
+ 681:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a Unprivileged STRT instruction for 16 bit values.
+ 682:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 683:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 684:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 685:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
+ 686:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 687:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
+ 688:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 689:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 690:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 691:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 692:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   STRT Unprivileged (32 bit)
+ 693:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a Unprivileged STRT instruction for 32 bit values.
+ 694:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 695:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 696:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 697:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
+ 698:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 699:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
+ 700:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 701:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 702:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else  /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 703:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 704:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
+ 705:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 706:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 707:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Signed Saturate
+ 708:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Saturates a signed value.
+ 709:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to be saturated
+ 710:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    sat  Bit position to saturate to (1..32)
+ 711:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             Saturated value
+ 712:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 713:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE int32_t __SSAT(int32_t val, uint32_t sat)
+ 714:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 715:./../../CMSIS/Core/Include/cmsis_gcc.h ****   if ((sat >= 1U) && (sat <= 32U))
+ 716:./../../CMSIS/Core/Include/cmsis_gcc.h ****   {
+ 717:./../../CMSIS/Core/Include/cmsis_gcc.h ****     const int32_t max = (int32_t)((1U << (sat - 1U)) - 1U);
+ 718:./../../CMSIS/Core/Include/cmsis_gcc.h ****     const int32_t min = -1 - max ;
+ 719:./../../CMSIS/Core/Include/cmsis_gcc.h ****     if (val > max)
+ 720:./../../CMSIS/Core/Include/cmsis_gcc.h ****     {
+ 721:./../../CMSIS/Core/Include/cmsis_gcc.h ****       return max;
+ 722:./../../CMSIS/Core/Include/cmsis_gcc.h ****     }
+ 723:./../../CMSIS/Core/Include/cmsis_gcc.h ****     else if (val < min)
+ 724:./../../CMSIS/Core/Include/cmsis_gcc.h ****     {
+ 725:./../../CMSIS/Core/Include/cmsis_gcc.h ****       return min;
+ 726:./../../CMSIS/Core/Include/cmsis_gcc.h ****     }
+ 727:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 728:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return val;
+ 729:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 730:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 731:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 732:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Unsigned Saturate
+ 733:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Saturates an unsigned value.
+ 734:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to be saturated
+ 735:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    sat  Bit position to saturate to (0..31)
+ 736:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             Saturated value
+ 737:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 738:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __USAT(int32_t val, uint32_t sat)
+ 739:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 740:./../../CMSIS/Core/Include/cmsis_gcc.h ****   if (sat <= 31U)
+ 741:./../../CMSIS/Core/Include/cmsis_gcc.h ****   {
+ 742:./../../CMSIS/Core/Include/cmsis_gcc.h ****     const uint32_t max = ((1U << sat) - 1U);
+ 743:./../../CMSIS/Core/Include/cmsis_gcc.h ****     if (val > (int32_t)max)
+ 744:./../../CMSIS/Core/Include/cmsis_gcc.h ****     {
+ 745:./../../CMSIS/Core/Include/cmsis_gcc.h ****       return max;
+ 746:./../../CMSIS/Core/Include/cmsis_gcc.h ****     }
+ 747:./../../CMSIS/Core/Include/cmsis_gcc.h ****     else if (val < 0)
+ 748:./../../CMSIS/Core/Include/cmsis_gcc.h ****     {
+ 749:./../../CMSIS/Core/Include/cmsis_gcc.h ****       return 0U;
+ 750:./../../CMSIS/Core/Include/cmsis_gcc.h ****     }
+ 751:./../../CMSIS/Core/Include/cmsis_gcc.h ****   }
+ 752:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return (uint32_t)val;
+ 753:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 754:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 755:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+ 756:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+ 757:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
+ 758:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 759:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 760:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+ 761:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
+ 762:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 763:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Load-Acquire (8 bit)
+ 764:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a LDAB instruction for 8 bit value.
+ 765:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 766:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             value of type uint8_t at (*ptr)
+ 767:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 768:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint8_t __LDAB(volatile uint8_t *ptr)
+ 769:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 770:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 771:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 772:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldab %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
+ 773:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint8_t) result);
+ 774:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 775:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 776:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 777:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 778:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Load-Acquire (16 bit)
+ 779:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a LDAH instruction for 16 bit values.
+ 780:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 781:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ 782:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 783:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDAH(volatile uint16_t *ptr)
+ 784:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 785:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 786:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 787:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldah %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
+ 788:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint16_t) result);
+ 789:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 790:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 791:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 792:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 793:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Load-Acquire (32 bit)
+ 794:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a LDA instruction for 32 bit values.
+ 795:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 796:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
+ 797:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 798:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDA(volatile uint32_t *ptr)
+ 799:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 800:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 801:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 802:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("lda %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
+ 803:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 804:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 805:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 806:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 807:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 808:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Store-Release (8 bit)
+ 809:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a STLB instruction for 8 bit values.
+ 810:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 811:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 812:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 813:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STLB(uint8_t value, volatile uint8_t *ptr)
+ 814:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 815:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("stlb %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) : "memory" );
+ 816:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 817:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 818:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 819:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 820:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Store-Release (16 bit)
+ 821:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a STLH instruction for 16 bit values.
+ 822:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 823:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 824:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 825:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STLH(uint16_t value, volatile uint16_t *ptr)
+ 826:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 827:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("stlh %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) : "memory" );
+ 828:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 829:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 830:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 831:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 832:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Store-Release (32 bit)
+ 833:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a STL instruction for 32 bit values.
+ 834:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 835:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 836:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 837:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __STL(uint32_t value, volatile uint32_t *ptr)
+ 838:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 839:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("stl %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) : "memory" );
+ 840:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 841:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 842:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 843:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 844:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (8 bit)
+ 845:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a LDAB exclusive instruction for 8 bit value.
+ 846:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 847:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return             value of type uint8_t at (*ptr)
+ 848:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 849:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint8_t __LDAEXB(volatile uint8_t *ptr)
+ 850:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 851:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 852:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 853:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldaexb %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
+ 854:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint8_t) result);
+ 855:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 856:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 857:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 858:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 859:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (16 bit)
+ 860:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a LDAH exclusive instruction for 16 bit values.
+ 861:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 862:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint16_t at (*ptr)
+ 863:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 864:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint16_t __LDAEXH(volatile uint16_t *ptr)
+ 865:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 866:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 867:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 868:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldaexh %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
+ 869:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return ((uint16_t) result);
+ 870:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 871:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 872:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 873:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 874:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Load-Acquire Exclusive (32 bit)
+ 875:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a LDA exclusive instruction for 32 bit values.
+ 876:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to data
+ 877:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return        value of type uint32_t at (*ptr)
+ 878:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 879:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __LDAEX(volatile uint32_t *ptr)
+ 880:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 881:./../../CMSIS/Core/Include/cmsis_gcc.h ****     uint32_t result;
+ 882:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 883:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("ldaex %0, %1" : "=r" (result) : "Q" (*ptr) : "memory" );
+ 884:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 885:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 886:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 887:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 888:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 889:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Store-Release Exclusive (8 bit)
+ 890:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a STLB exclusive instruction for 8 bit values.
+ 891:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 892:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 893:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          0  Function succeeded
+ 894:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          1  Function failed
+ 895:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 896:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXB(uint8_t value, volatile uint8_t *ptr)
+ 897:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 898:./../../CMSIS/Core/Include/cmsis_gcc.h ****    uint32_t result;
+ 899:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 900:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("stlexb %0, %2, %1" : "=&r" (result), "=Q" (*ptr) : "r" ((uint32_t)value) : "mem
+ 901:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 902:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 903:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 904:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 905:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 906:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Store-Release Exclusive (16 bit)
+ 907:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a STLH exclusive instruction for 16 bit values.
+ 908:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 909:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 910:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          0  Function succeeded
+ 911:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          1  Function failed
+ 912:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 913:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
+ 914:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 915:./../../CMSIS/Core/Include/cmsis_gcc.h ****    uint32_t result;
+ 916:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 917:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("stlexh %0, %2, %1" : "=&r" (result), "=Q" (*ptr) : "r" ((uint32_t)value) : "mem
+ 918:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 919:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 920:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 921:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 922:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 923:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Store-Release Exclusive (32 bit)
+ 924:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Executes a STL exclusive instruction for 32 bit values.
+ 925:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]  value  Value to store
+ 926:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ptr  Pointer to location
+ 927:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          0  Function succeeded
+ 928:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return          1  Function failed
+ 929:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 930:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STLEX(uint32_t value, volatile uint32_t *ptr)
+ 931:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 932:./../../CMSIS/Core/Include/cmsis_gcc.h ****    uint32_t result;
+ 933:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 934:./../../CMSIS/Core/Include/cmsis_gcc.h ****    __ASM volatile ("stlex %0, %2, %1" : "=&r" (result), "=Q" (*ptr) : "r" ((uint32_t)value) : "memo
+ 935:./../../CMSIS/Core/Include/cmsis_gcc.h ****    return(result);
+ 936:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 937:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 938:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+ 939:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    ) */
+ 940:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 941:./../../CMSIS/Core/Include/cmsis_gcc.h **** /*@}*/ /* end of group CMSIS_Core_InstructionInterface */
+ 942:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 943:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 944:./../../CMSIS/Core/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 945:./../../CMSIS/Core/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 946:./../../CMSIS/Core/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 947:./../../CMSIS/Core/Include/cmsis_gcc.h ****   @{
+ 948:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 949:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 950:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 951:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 952:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing special-purpose register PRIMASK.
+ 953:./../../CMSIS/Core/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 954:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 955:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 956:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 957:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 958:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 959:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 960:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 961:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 962:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 963:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting special-purpose register PRIMASK.
+ 964:./../../CMSIS/Core/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 965:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 966:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 967:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 968:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 969:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 970:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 971:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 972:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 973:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Control Register
+ 974:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the content of the Control Register.
+ 975:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Control Register value
+ 976:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 977:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_CONTROL(void)
+ 978:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 979:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+ 980:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 981:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control" : "=r" (result) );
+ 982:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+ 983:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 984:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 985:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 986:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 987:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+ 988:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Control Register (non-secure)
+ 989:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the content of the non-secure Control Register when in secure mode.
+ 990:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               non-secure Control Register value
+ 991:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+ 992:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_CONTROL_NS(void)
+ 993:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+ 994:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+ 995:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 996:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control_ns" : "=r" (result) );
+ 997:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+ 998:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 999:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1000:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1001:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1002:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1003:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Control Register
+1004:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Writes the given value to the Control Register.
+1005:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+1006:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1007:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_CONTROL(uint32_t control)
+1008:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1009:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control, %0" : : "r" (control) : "memory");
+1010:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ISB();
+1011:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1012:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1013:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1014:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1015:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1016:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Control Register (non-secure)
+1017:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Writes the given value to the non-secure Control Register when in secure state.
+1018:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+1019:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1020:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
+1021:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1022:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control_ns, %0" : : "r" (control) : "memory");
+1023:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ISB();
+1024:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1025:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1026:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1027:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1028:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1029:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get IPSR Register
+1030:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the content of the IPSR Register.
+1031:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               IPSR Register value
+1032:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1033:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_IPSR(void)
+1034:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1035:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1036:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1037:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
+1038:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1039:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1040:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1041:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1042:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1043:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get APSR Register
+1044:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the content of the APSR Register.
+1045:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               APSR Register value
+1046:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1047:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_APSR(void)
+1048:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1049:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1050:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1051:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, apsr" : "=r" (result) );
+1052:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1053:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1054:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1055:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1056:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1057:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get xPSR Register
+1058:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the content of the xPSR Register.
+1059:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               xPSR Register value
+1060:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1061:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_xPSR(void)
+1062:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1063:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1064:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1065:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, xpsr" : "=r" (result) );
+1066:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1067:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1068:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1069:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1070:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1071:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer
+1072:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
+1073:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               PSP Register value
+1074:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1075:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSP(void)
+1076:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1077:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1078:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1079:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp"  : "=r" (result) );
+1080:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1081:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1082:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1083:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1084:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1085:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1086:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer (non-secure)
+1087:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Process Stack Pointer (PSP) when in secure s
+1088:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               PSP Register value
+1089:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1090:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PSP_NS(void)
+1091:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1092:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1093:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1094:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp_ns"  : "=r" (result) );
+1095:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1096:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1097:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1098:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1099:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1100:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1101:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer
+1102:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer (PSP).
+1103:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+1104:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1105:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PSP(uint32_t topOfProcStack)
+1106:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1107:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
+  81              		.loc 2 1107 3
+  82 000a 7B68     		ldr	r3, [r7, #4]
+  83              		.syntax unified
+  84              	@ 1107 "./../../CMSIS/Core/Include/cmsis_gcc.h" 1
+  85 000c 83F30988 		MSR psp, r3
+  86              	@ 0 "" 2
+1108:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+  87              		.loc 2 1108 1
+  88              		.thumb
+  89              		.syntax unified
+  90 0010 00BF     		nop
+  91              	.LBE9:
+  92              	.LBE8:
+  91:./Source/startup_Musca-B1.c **** 
+  92:./Source/startup_Musca-B1.c ****   __set_MSPLIM((uint32_t)(&__STACK_LIMIT));
+  93              		.loc 1 92 3
+  94 0012 094B     		ldr	r3, .L3+4
+  95 0014 BB60     		str	r3, [r7, #8]
+  96              	.LBB10:
+  97              	.LBB11:
+1109:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1110:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1111:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1112:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1113:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
+1114:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Process Stack Pointer (PSP) when in secure sta
+1115:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+1116:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1117:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PSP_NS(uint32_t topOfProcStack)
+1118:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1119:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp_ns, %0" : : "r" (topOfProcStack) : );
+1120:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1121:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1122:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1123:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1124:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1125:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer
+1126:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer (MSP).
+1127:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               MSP Register value
+1128:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1129:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
+1130:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1131:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1132:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1133:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp" : "=r" (result) );
+1134:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1135:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1136:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1137:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1138:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1139:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1140:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer (non-secure)
+1141:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Main Stack Pointer (MSP) when in secure stat
+1142:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               MSP Register value
+1143:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1144:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSP_NS(void)
+1145:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1146:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1147:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1148:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp_ns" : "=r" (result) );
+1149:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1150:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1151:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1152:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1153:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1154:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1155:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer
+1156:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer (MSP).
+1157:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
+1158:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1159:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_MSP(uint32_t topOfMainStack)
+1160:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1161:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
+1162:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1163:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1164:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1165:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1166:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1167:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer (non-secure)
+1168:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Main Stack Pointer (MSP) when in secure state.
+1169:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
+1170:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1171:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_MSP_NS(uint32_t topOfMainStack)
+1172:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1173:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msp_ns, %0" : : "r" (topOfMainStack) : );
+1174:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1175:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1176:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1177:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1178:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1179:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1180:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Stack Pointer (non-secure)
+1181:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Stack Pointer (SP) when in secure state.
+1182:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               SP Register value
+1183:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1184:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_SP_NS(void)
+1185:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1186:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1187:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1188:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, sp_ns" : "=r" (result) );
+1189:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1190:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1191:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1192:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1193:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1194:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Stack Pointer (non-secure)
+1195:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Stack Pointer (SP) when in secure state.
+1196:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    topOfStack  Stack Pointer value to set
+1197:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1198:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_SP_NS(uint32_t topOfStack)
+1199:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1200:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR sp_ns, %0" : : "r" (topOfStack) : );
+1201:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1202:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1203:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1204:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1205:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1206:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Priority Mask
+1207:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current state of the priority mask bit from the Priority Mask Register.
+1208:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Priority Mask value
+1209:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1210:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PRIMASK(void)
+1211:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1212:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1213:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1214:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask" : "=r" (result) );
+1215:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1216:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1217:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1218:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1219:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1220:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1221:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Priority Mask (non-secure)
+1222:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current state of the non-secure priority mask bit from the Priority Mask Reg
+1223:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Priority Mask value
+1224:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1225:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PRIMASK_NS(void)
+1226:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1227:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1228:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1229:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask_ns" : "=r" (result) );
+1230:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1231:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1232:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1233:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1234:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1235:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1236:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Priority Mask
+1237:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Priority Mask Register.
+1238:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
+1239:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1240:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PRIMASK(uint32_t priMask)
+1241:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1242:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
+1243:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1244:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1245:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1246:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1247:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1248:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Priority Mask (non-secure)
+1249:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Priority Mask Register when in secure state.
+1250:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
+1251:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1252:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PRIMASK_NS(uint32_t priMask)
+1253:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1254:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask_ns, %0" : : "r" (priMask) : "memory");
+1255:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1256:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1257:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1258:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1259:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+1260:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+1261:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    )
+1262:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1263:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Enable FIQ
+1264:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Enables FIQ interrupts by clearing special-purpose register FAULTMASK.
+1265:./../../CMSIS/Core/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+1266:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1267:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_fault_irq(void)
+1268:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1269:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie f" : : : "memory");
+1270:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1271:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1272:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1273:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1274:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Disable FIQ
+1275:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Disables FIQ interrupts by setting special-purpose register FAULTMASK.
+1276:./../../CMSIS/Core/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+1277:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1278:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_fault_irq(void)
+1279:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1280:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid f" : : : "memory");
+1281:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1282:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1283:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1284:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1285:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Base Priority
+1286:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the Base Priority register.
+1287:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Base Priority register value
+1288:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1289:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_BASEPRI(void)
+1290:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1291:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1292:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1293:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, basepri" : "=r" (result) );
+1294:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1295:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1296:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1297:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1298:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1299:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1300:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Base Priority (non-secure)
+1301:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Base Priority register when in secure state.
+1302:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Base Priority register value
+1303:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1304:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_BASEPRI_NS(void)
+1305:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1306:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1307:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1308:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, basepri_ns" : "=r" (result) );
+1309:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1310:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1311:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1312:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1313:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1314:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1315:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Base Priority
+1316:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register.
+1317:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+1318:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1319:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_BASEPRI(uint32_t basePri)
+1320:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1321:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri, %0" : : "r" (basePri) : "memory");
+1322:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1323:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1324:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1325:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1326:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1327:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Base Priority (non-secure)
+1328:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Base Priority register when in secure state.
+1329:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+1330:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1331:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_BASEPRI_NS(uint32_t basePri)
+1332:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1333:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri_ns, %0" : : "r" (basePri) : "memory");
+1334:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1335:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1336:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1337:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1338:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1339:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Base Priority with condition
+1340:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register only if BASEPRI masking is disable
+1341:./../../CMSIS/Core/Include/cmsis_gcc.h ****            or the new value increases the BASEPRI priority level.
+1342:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+1343:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1344:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_BASEPRI_MAX(uint32_t basePri)
+1345:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1346:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
+1347:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1348:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1349:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1350:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1351:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Fault Mask
+1352:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the Fault Mask register.
+1353:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Fault Mask register value
+1354:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1355:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_FAULTMASK(void)
+1356:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1357:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1358:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1359:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask" : "=r" (result) );
+1360:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1361:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1362:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1363:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1364:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1365:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1366:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Fault Mask (non-secure)
+1367:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Fault Mask register when in secure state.
+1368:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               Fault Mask register value
+1369:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1370:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_FAULTMASK_NS(void)
+1371:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1372:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1373:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1374:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask_ns" : "=r" (result) );
+1375:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return(result);
+1376:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1377:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1378:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1379:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1380:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1381:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Fault Mask
+1382:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Fault Mask register.
+1383:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
+1384:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1385:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_FAULTMASK(uint32_t faultMask)
+1386:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1387:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
+1388:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1389:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1390:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1391:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+1392:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1393:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Fault Mask (non-secure)
+1394:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Fault Mask register when in secure state.
+1395:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
+1396:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1397:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_FAULTMASK_NS(uint32_t faultMask)
+1398:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1399:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR faultmask_ns, %0" : : "r" (faultMask) : "memory");
+1400:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1401:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1402:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1403:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
+1404:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
+1405:./../../CMSIS/Core/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
+1406:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1407:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1408:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) || \
+1409:./../../CMSIS/Core/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1))    )
+1410:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1411:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1412:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer Limit
+1413:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1414:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always in non-secure
+1415:./../../CMSIS/Core/Include/cmsis_gcc.h ****   mode.
+1416:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1417:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer Limit (PSPLIM).
+1418:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               PSPLIM Register value
+1419:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1420:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSPLIM(void)
+1421:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1422:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+1423:./../../CMSIS/Core/Include/cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+1424:./../../CMSIS/Core/Include/cmsis_gcc.h ****     // without main extensions, the non-secure PSPLIM is RAZ/WI
+1425:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return 0U;
+1426:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1427:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1428:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psplim"  : "=r" (result) );
+1429:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+1430:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1431:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1432:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1433:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3))
+1434:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1435:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer Limit (non-secure)
+1436:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1437:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always.
+1438:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1439:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Process Stack Pointer Limit (PSPLIM) when in
+1440:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               PSPLIM Register value
+1441:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1442:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PSPLIM_NS(void)
+1443:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1444:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+1445:./../../CMSIS/Core/Include/cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
+1446:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return 0U;
+1447:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1448:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1449:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psplim_ns"  : "=r" (result) );
+1450:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+1451:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1452:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1453:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1454:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1455:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1456:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1457:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer Limit
+1458:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1459:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored in non-secure
+1460:./../../CMSIS/Core/Include/cmsis_gcc.h ****   mode.
+1461:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1462:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer Limit (PSPLIM).
+1463:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ProcStackPtrLimit  Process Stack Pointer Limit value to set
+1464:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1465:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PSPLIM(uint32_t ProcStackPtrLimit)
+1466:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1467:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+1468:./../../CMSIS/Core/Include/cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+1469:./../../CMSIS/Core/Include/cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
+1470:./../../CMSIS/Core/Include/cmsis_gcc.h ****   (void)ProcStackPtrLimit;
+1471:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1472:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psplim, %0" : : "r" (ProcStackPtrLimit));
+1473:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1474:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1475:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1476:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1477:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
+1478:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1479:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
+1480:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1481:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored.
+1482:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1483:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Process Stack Pointer Limit (PSPLIM) when in s
+1484:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    ProcStackPtrLimit  Process Stack Pointer Limit value to set
+1485:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1486:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PSPLIM_NS(uint32_t ProcStackPtrLimit)
+1487:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1488:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+1489:./../../CMSIS/Core/Include/cmsis_gcc.h ****   // without main extensions, the non-secure PSPLIM is RAZ/WI
+1490:./../../CMSIS/Core/Include/cmsis_gcc.h ****   (void)ProcStackPtrLimit;
+1491:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1492:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psplim_ns, %0\n" : : "r" (ProcStackPtrLimit));
+1493:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1494:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1495:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1496:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1497:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1498:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1499:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer Limit
+1500:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1501:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always in non-secure
+1502:./../../CMSIS/Core/Include/cmsis_gcc.h ****   mode.
+1503:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1504:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer Limit (MSPLIM).
+1505:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               MSPLIM Register value
+1506:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1507:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSPLIM(void)
+1508:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1509:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+1510:./../../CMSIS/Core/Include/cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+1511:./../../CMSIS/Core/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+1512:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return 0U;
+1513:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1514:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1515:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msplim" : "=r" (result) );
+1516:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+1517:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1518:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1519:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1520:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1521:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
+1522:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1523:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer Limit (non-secure)
+1524:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1525:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence zero is returned always.
+1526:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1527:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Main Stack Pointer Limit(MSPLIM) when in sec
+1528:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \return               MSPLIM Register value
+1529:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1530:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSPLIM_NS(void)
+1531:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1532:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
+1533:./../../CMSIS/Core/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+1534:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return 0U;
+1535:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1536:./../../CMSIS/Core/Include/cmsis_gcc.h ****   uint32_t result;
+1537:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msplim_ns" : "=r" (result) );
+1538:./../../CMSIS/Core/Include/cmsis_gcc.h ****   return result;
+1539:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1540:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+1541:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1542:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1543:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1544:./../../CMSIS/Core/Include/cmsis_gcc.h **** /**
+1545:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer Limit
+1546:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
+1547:./../../CMSIS/Core/Include/cmsis_gcc.h ****   Stack Pointer Limit register hence the write is silently ignored in non-secure
+1548:./../../CMSIS/Core/Include/cmsis_gcc.h ****   mode.
+1549:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+1550:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer Limit (MSPLIM).
+1551:./../../CMSIS/Core/Include/cmsis_gcc.h ****   \param [in]    MainStackPtrLimit  Main Stack Pointer Limit value to set
+1552:./../../CMSIS/Core/Include/cmsis_gcc.h ****  */
+1553:./../../CMSIS/Core/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_MSPLIM(uint32_t MainStackPtrLimit)
+1554:./../../CMSIS/Core/Include/cmsis_gcc.h **** {
+1555:./../../CMSIS/Core/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
+1556:./../../CMSIS/Core/Include/cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+1557:./../../CMSIS/Core/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
+1558:./../../CMSIS/Core/Include/cmsis_gcc.h ****   (void)MainStackPtrLimit;
+1559:./../../CMSIS/Core/Include/cmsis_gcc.h **** #else
+1560:./../../CMSIS/Core/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msplim, %0" : : "r" (MainStackPtrLimit));
+  98              		.loc 2 1560 3
+  99 0016 BB68     		ldr	r3, [r7, #8]
+ 100              		.syntax unified
+ 101              	@ 1560 "./../../CMSIS/Core/Include/cmsis_gcc.h" 1
+ 102 0018 83F30A88 		MSR msplim, r3
+ 103              	@ 0 "" 2
+1561:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+1562:./../../CMSIS/Core/Include/cmsis_gcc.h **** }
+ 104              		.loc 2 1562 1
+ 105              		.thumb
+ 106              		.syntax unified
+ 107 001c 00BF     		nop
+ 108              	.LBE11:
+ 109              	.LBE10:
+  93:./Source/startup_Musca-B1.c ****   __set_PSPLIM((uint32_t)(&__STACK_LIMIT));
+ 110              		.loc 1 93 3
+ 111 001e 064B     		ldr	r3, .L3+4
+ 112 0020 FB60     		str	r3, [r7, #12]
+ 113              	.LBB12:
+ 114              	.LBB13:
+1472:./../../CMSIS/Core/Include/cmsis_gcc.h **** #endif
+ 115              		.loc 2 1472 3
+ 116 0022 FB68     		ldr	r3, [r7, #12]
+ 117              		.syntax unified
+ 118              	@ 1472 "./../../CMSIS/Core/Include/cmsis_gcc.h" 1
+ 119 0024 83F30B88 		MSR psplim, r3
+ 120              	@ 0 "" 2
+1474:./../../CMSIS/Core/Include/cmsis_gcc.h **** 
+ 121              		.loc 2 1474 1
+ 122              		.thumb
+ 123              		.syntax unified
+ 124 0028 00BF     		nop
+ 125              	.LBE13:
+ 126              	.LBE12:
+  94:./Source/startup_Musca-B1.c ****   SystemInit();                                 /* CMSIS System Initialization */
+ 127              		.loc 1 94 3
+ 128 002a FFF7FEFF 		bl	SystemInit
+  95:./Source/startup_Musca-B1.c ****   main();                                       /* Enter PreMain (C library entry point) */
+ 129              		.loc 1 95 3
+ 130 002e FFF7FEFF 		bl	main
+ 131              	.L2:
+  96:./Source/startup_Musca-B1.c ****   while(1);
+ 132              		.loc 1 96 8 discriminator 1
+ 133 0032 FEE7     		b	.L2
+ 134              	.L4:
+ 135              		.align	2
+ 136              	.L3:
+ 137 0034 00000000 		.word	__StackTop
+ 138 0038 00000000 		.word	__StackLimit
+ 139              		.cfi_endproc
+ 140              	.LFE158:
+ 142              		.align	1
+ 143              		.weak	HardFault_Handler
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 148              	HardFault_Handler:
+ 149              	.LFB159:
+  97:./Source/startup_Musca-B1.c **** }
+  98:./Source/startup_Musca-B1.c **** 
+  99:./Source/startup_Musca-B1.c **** #if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+ 100:./Source/startup_Musca-B1.c ****   #pragma clang diagnostic push
+ 101:./Source/startup_Musca-B1.c ****   #pragma clang diagnostic ignored "-Wmissing-noreturn"
+ 102:./Source/startup_Musca-B1.c **** #endif
+ 103:./Source/startup_Musca-B1.c **** 
+ 104:./Source/startup_Musca-B1.c **** /*----------------------------------------------------------------------------
+ 105:./Source/startup_Musca-B1.c ****   Hard Fault Handler
+ 106:./Source/startup_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+ 107:./Source/startup_Musca-B1.c **** void HardFault_Handler(void)
+ 108:./Source/startup_Musca-B1.c **** {
+ 150              		.loc 1 108 1
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 1, uses_anonymous_args = 0
+ 154              		@ link register save eliminated.
+ 155 003c 80B4     		push	{r7}
+ 156              	.LCFI3:
+ 157              		.cfi_def_cfa_offset 4
+ 158              		.cfi_offset 7, -4
+ 159 003e 00AF     		add	r7, sp, #0
+ 160              	.LCFI4:
+ 161              		.cfi_def_cfa_register 7
+ 162              	.L6:
+ 109:./Source/startup_Musca-B1.c ****   while(1);
+ 163              		.loc 1 109 8 discriminator 1
+ 164 0040 FEE7     		b	.L6
+ 165              		.cfi_endproc
+ 166              	.LFE159:
+ 168              		.align	1
+ 169              		.global	Default_Handler
+ 170              		.syntax unified
+ 171              		.thumb
+ 172              		.thumb_func
+ 174              	Default_Handler:
+ 175              	.LFB160:
+ 110:./Source/startup_Musca-B1.c **** }
+ 111:./Source/startup_Musca-B1.c **** 
+ 112:./Source/startup_Musca-B1.c **** /*----------------------------------------------------------------------------
+ 113:./Source/startup_Musca-B1.c ****   Default Handler for Exceptions / Interrupts
+ 114:./Source/startup_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+ 115:./Source/startup_Musca-B1.c **** void Default_Handler(void)
+ 116:./Source/startup_Musca-B1.c **** {
+ 176              		.loc 1 116 1
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 1, uses_anonymous_args = 0
+ 180              		@ link register save eliminated.
+ 181 0042 80B4     		push	{r7}
+ 182              	.LCFI5:
+ 183              		.cfi_def_cfa_offset 4
+ 184              		.cfi_offset 7, -4
+ 185 0044 00AF     		add	r7, sp, #0
+ 186              	.LCFI6:
+ 187              		.cfi_def_cfa_register 7
+ 188              	.L8:
+ 117:./Source/startup_Musca-B1.c ****   while(1);
+ 189              		.loc 1 117 8 discriminator 1
+ 190 0046 FEE7     		b	.L8
+ 191              		.cfi_endproc
+ 192              	.LFE160:
+ 194              		.weak	Interrupt9_Handler
+ 195              		.thumb_set Interrupt9_Handler,Default_Handler
+ 196              		.weak	Interrupt8_Handler
+ 197              		.thumb_set Interrupt8_Handler,Default_Handler
+ 198              		.weak	Interrupt7_Handler
+ 199              		.thumb_set Interrupt7_Handler,Default_Handler
+ 200              		.weak	Interrupt6_Handler
+ 201              		.thumb_set Interrupt6_Handler,Default_Handler
+ 202              		.weak	Interrupt5_Handler
+ 203              		.thumb_set Interrupt5_Handler,Default_Handler
+ 204              		.weak	Interrupt4_Handler
+ 205              		.thumb_set Interrupt4_Handler,Default_Handler
+ 206              		.weak	Interrupt3_Handler
+ 207              		.thumb_set Interrupt3_Handler,Default_Handler
+ 208              		.weak	Interrupt2_Handler
+ 209              		.thumb_set Interrupt2_Handler,Default_Handler
+ 210              		.weak	Interrupt1_Handler
+ 211              		.thumb_set Interrupt1_Handler,Default_Handler
+ 212              		.weak	Interrupt0_Handler
+ 213              		.thumb_set Interrupt0_Handler,Default_Handler
+ 214              		.weak	SysTick_Handler
+ 215              		.thumb_set SysTick_Handler,Default_Handler
+ 216              		.weak	PendSV_Handler
+ 217              		.thumb_set PendSV_Handler,Default_Handler
+ 218              		.weak	DebugMon_Handler
+ 219              		.thumb_set DebugMon_Handler,Default_Handler
+ 220              		.weak	SVC_Handler
+ 221              		.thumb_set SVC_Handler,Default_Handler
+ 222              		.weak	SecureFault_Handler
+ 223              		.thumb_set SecureFault_Handler,Default_Handler
+ 224              		.weak	UsageFault_Handler
+ 225              		.thumb_set UsageFault_Handler,Default_Handler
+ 226              		.weak	BusFault_Handler
+ 227              		.thumb_set BusFault_Handler,Default_Handler
+ 228              		.weak	MemManage_Handler
+ 229              		.thumb_set MemManage_Handler,Default_Handler
+ 230              		.weak	NMI_Handler
+ 231              		.thumb_set NMI_Handler,Default_Handler
+ 232              	.Letext0:
+ 233              		.file 3 "c:\\d\\arm cortex m3\\gcc-arm-none-eabi-10.3-2021.10-win32\\gcc-arm-none-eabi-10.3-2021.1
+ 234              		.file 4 "c:\\d\\arm cortex m3\\gcc-arm-none-eabi-10.3-2021.10-win32\\gcc-arm-none-eabi-10.3-2021.1
+ 235              		.file 5 "./Include/system_Musca-B1.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 startup_Musca-B1.c
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:23     .vectors:00000000 __Vectors
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:20     .vectors:00000000 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:57     .text:00000000 Reset_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 NMI_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:148    .text:0000003c HardFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 MemManage_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 BusFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 UsageFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 SecureFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 SVC_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 DebugMon_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 PendSV_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 SysTick_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt0_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt1_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt2_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt3_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt4_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt5_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt6_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt7_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt8_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Interrupt9_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:51     .text:00000000 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:137    .text:00000034 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:142    .text:0000003c $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccSzV4ha.s:174    .text:00000042 Default_Handler
+
+UNDEFINED SYMBOLS
+__StackTop
+SystemInit
+main
+__StackLimit
