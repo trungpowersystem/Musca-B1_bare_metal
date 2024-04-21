@@ -1,0 +1,174 @@
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu softvfp
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"system_Musca-B1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	SystemCoreClock
+  19              		.data
+  20              		.align	2
+  23              	SystemCoreClock:
+  24 0000 80F0FA02 		.word	50000000
+  25              		.text
+  26              		.align	1
+  27              		.global	SystemCoreClockUpdate
+  28              		.syntax unified
+  29              		.thumb
+  30              		.thumb_func
+  32              	SystemCoreClockUpdate:
+  33              	.LFB158:
+  34              		.file 1 "./Source/system_Musca-B1.c"
+   1:./Source/system_Musca-B1.c **** #include "Musca-B1.h"
+   2:./Source/system_Musca-B1.c **** #include "system_Musca-B1.h"
+   3:./Source/system_Musca-B1.c **** 
+   4:./Source/system_Musca-B1.c **** /*----------------------------------------------------------------------------
+   5:./Source/system_Musca-B1.c ****   Exception / Interrupt Vector table
+   6:./Source/system_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+   7:./Source/system_Musca-B1.c **** extern const VECTOR_TABLE_Type __VECTOR_TABLE[];
+   8:./Source/system_Musca-B1.c **** 
+   9:./Source/system_Musca-B1.c **** /*----------------------------------------------------------------------------
+  10:./Source/system_Musca-B1.c ****   Define clocks
+  11:./Source/system_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+  12:./Source/system_Musca-B1.c **** /* see system_Musca-B1.h */
+  13:./Source/system_Musca-B1.c **** 
+  14:./Source/system_Musca-B1.c **** /*----------------------------------------------------------------------------
+  15:./Source/system_Musca-B1.c ****   System Core Clock Variable
+  16:./Source/system_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+  17:./Source/system_Musca-B1.c **** uint32_t SystemCoreClock = SYSTEM_CLOCK;  /* System Core Clock Frequency */
+  18:./Source/system_Musca-B1.c **** 
+  19:./Source/system_Musca-B1.c **** void SystemCoreClockUpdate (void)
+  20:./Source/system_Musca-B1.c **** {
+  35              		.loc 1 20 1
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40 0000 80B4     		push	{r7}
+  41              	.LCFI0:
+  42              		.cfi_def_cfa_offset 4
+  43              		.cfi_offset 7, -4
+  44 0002 00AF     		add	r7, sp, #0
+  45              	.LCFI1:
+  46              		.cfi_def_cfa_register 7
+  21:./Source/system_Musca-B1.c ****   SystemCoreClock = SYSTEM_CLOCK;
+  47              		.loc 1 21 19
+  48 0004 034B     		ldr	r3, .L2
+  49 0006 044A     		ldr	r2, .L2+4
+  50 0008 1A60     		str	r2, [r3]
+  22:./Source/system_Musca-B1.c **** }
+  51              		.loc 1 22 1
+  52 000a 00BF     		nop
+  53 000c BD46     		mov	sp, r7
+  54              	.LCFI2:
+  55              		.cfi_def_cfa_register 13
+  56              		@ sp needed
+  57 000e 80BC     		pop	{r7}
+  58              	.LCFI3:
+  59              		.cfi_restore 7
+  60              		.cfi_def_cfa_offset 0
+  61 0010 7047     		bx	lr
+  62              	.L3:
+  63 0012 00BF     		.align	2
+  64              	.L2:
+  65 0014 00000000 		.word	SystemCoreClock
+  66 0018 80F0FA02 		.word	50000000
+  67              		.cfi_endproc
+  68              	.LFE158:
+  70              		.align	1
+  71              		.global	SystemInit
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  76              	SystemInit:
+  77              	.LFB159:
+  23:./Source/system_Musca-B1.c **** 
+  24:./Source/system_Musca-B1.c **** /*----------------------------------------------------------------------------
+  25:./Source/system_Musca-B1.c ****   System initialization function
+  26:./Source/system_Musca-B1.c ****  *----------------------------------------------------------------------------*/
+  27:./Source/system_Musca-B1.c **** void SystemInit (void)
+  28:./Source/system_Musca-B1.c **** {
+  78              		.loc 1 28 1
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 1, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  83 001c 80B4     		push	{r7}
+  84              	.LCFI4:
+  85              		.cfi_def_cfa_offset 4
+  86              		.cfi_offset 7, -4
+  87 001e 00AF     		add	r7, sp, #0
+  88              	.LCFI5:
+  89              		.cfi_def_cfa_register 7
+  29:./Source/system_Musca-B1.c **** #if defined (__VTOR_PRESENT) && (__VTOR_PRESENT == 1U)
+  30:./Source/system_Musca-B1.c ****   SCB->VTOR = (uint32_t) &__VECTOR_TABLE;
+  90              		.loc 1 30 6
+  91 0020 044B     		ldr	r3, .L5
+  92              		.loc 1 30 15
+  93 0022 054A     		ldr	r2, .L5+4
+  94              		.loc 1 30 13
+  95 0024 9A60     		str	r2, [r3, #8]
+  31:./Source/system_Musca-B1.c **** #endif
+  32:./Source/system_Musca-B1.c **** 
+  33:./Source/system_Musca-B1.c **** #if defined (__FPU_USED) && (__FPU_USED == 1U)
+  34:./Source/system_Musca-B1.c ****   SCB->CPACR |= ((3U << 10U*2U) |           /* enable CP10 Full Access */
+  35:./Source/system_Musca-B1.c ****                  (3U << 11U*2U)  );         /* enable CP11 Full Access */
+  36:./Source/system_Musca-B1.c **** #endif
+  37:./Source/system_Musca-B1.c **** 
+  38:./Source/system_Musca-B1.c **** #ifdef UNALIGNED_SUPPORT_DISABLE
+  39:./Source/system_Musca-B1.c ****   SCB->CCR |= SCB_CCR_UNALIGN_TRP_Msk;
+  40:./Source/system_Musca-B1.c **** #endif
+  41:./Source/system_Musca-B1.c **** SystemCoreClock = SYSTEM_CLOCK;
+  96              		.loc 1 41 17
+  97 0026 054B     		ldr	r3, .L5+8
+  98 0028 054A     		ldr	r2, .L5+12
+  99 002a 1A60     		str	r2, [r3]
+  42:./Source/system_Musca-B1.c **** }...
+ 100              		.loc 1 42 1
+ 101 002c 00BF     		nop
+ 102 002e BD46     		mov	sp, r7
+ 103              	.LCFI6:
+ 104              		.cfi_def_cfa_register 13
+ 105              		@ sp needed
+ 106 0030 80BC     		pop	{r7}
+ 107              	.LCFI7:
+ 108              		.cfi_restore 7
+ 109              		.cfi_def_cfa_offset 0
+ 110 0032 7047     		bx	lr
+ 111              	.L6:
+ 112              		.align	2
+ 113              	.L5:
+ 114 0034 00ED00E0 		.word	-536810240
+ 115 0038 00000000 		.word	__Vectors
+ 116 003c 00000000 		.word	SystemCoreClock
+ 117 0040 80F0FA02 		.word	50000000
+ 118              		.cfi_endproc
+ 119              	.LFE159:
+ 121              	.Letext0:
+ 122              		.file 2 "c:\\gcc-arm-none-eabi-10.3-2021.10-win32\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\
+ 123              		.file 3 "c:\\gcc-arm-none-eabi-10.3-2021.10-win32\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\
+ 124              		.file 4 "./../../CMSIS/Core/Include/core_cm33.h"
+ 125              		.file 5 "./Include/system_Musca-B1.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_Musca-B1.c
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:23     .data:00000000 SystemCoreClock
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:20     .data:00000000 $d
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:26     .text:00000000 $t
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:32     .text:00000000 SystemCoreClockUpdate
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:65     .text:00000014 $d
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:70     .text:0000001c $t
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:76     .text:0000001c SystemInit
+C:\Users\ADMIN\AppData\Local\Temp\ccQ9fEMp.s:114    .text:00000034 $d
+
+UNDEFINED SYMBOLS
+__Vectors

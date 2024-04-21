@@ -1,0 +1,143 @@
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu softvfp
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.align	1
+  19              		.global	fun_add
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	fun_add:
+  25              	.LFB3:
+  26              		.file 1 "./Source/main.c"
+   1:./Source/main.c **** #include "stdio.h"
+   2:./Source/main.c **** int fun_add (int a, int b, int c, int d);
+   3:./Source/main.c **** 
+   4:./Source/main.c **** int fun_add(int a, int b, int c, int d) {
+  27              		.loc 1 4 41
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 85B0     		sub	sp, sp, #20
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 24
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+  42 0006 F860     		str	r0, [r7, #12]
+  43 0008 B960     		str	r1, [r7, #8]
+  44 000a 7A60     		str	r2, [r7, #4]
+  45 000c 3B60     		str	r3, [r7]
+   5:./Source/main.c ****     return a + b + c + d;
+  46              		.loc 1 5 14
+  47 000e FA68     		ldr	r2, [r7, #12]
+  48 0010 BB68     		ldr	r3, [r7, #8]
+  49 0012 1A44     		add	r2, r2, r3
+  50              		.loc 1 5 18
+  51 0014 7B68     		ldr	r3, [r7, #4]
+  52 0016 1A44     		add	r2, r2, r3
+  53              		.loc 1 5 22
+  54 0018 3B68     		ldr	r3, [r7]
+  55 001a 1344     		add	r3, r3, r2
+   6:./Source/main.c **** }
+  56              		.loc 1 6 1
+  57 001c 1846     		mov	r0, r3
+  58 001e 1437     		adds	r7, r7, #20
+  59              	.LCFI3:
+  60              		.cfi_def_cfa_offset 4
+  61 0020 BD46     		mov	sp, r7
+  62              	.LCFI4:
+  63              		.cfi_def_cfa_register 13
+  64              		@ sp needed
+  65 0022 80BC     		pop	{r7}
+  66              	.LCFI5:
+  67              		.cfi_restore 7
+  68              		.cfi_def_cfa_offset 0
+  69 0024 7047     		bx	lr
+  70              		.cfi_endproc
+  71              	.LFE3:
+  73              		.section	.rodata
+  74              		.align	2
+  75              	.LC0:
+  76 0000 52657375 		.ascii	"Result = %d\012\000"
+  76      6C74203D 
+  76      2025640A 
+  76      00
+  77              		.text
+  78              		.align	1
+  79              		.global	main
+  80              		.syntax unified
+  81              		.thumb
+  82              		.thumb_func
+  84              	main:
+  85              	.LFB4:
+   7:./Source/main.c **** int main(void)
+   8:./Source/main.c **** {
+  86              		.loc 1 8 1
+  87              		.cfi_startproc
+  88              		@ args = 0, pretend = 0, frame = 8
+  89              		@ frame_needed = 1, uses_anonymous_args = 0
+  90 0026 80B5     		push	{r7, lr}
+  91              	.LCFI6:
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 7, -8
+  94              		.cfi_offset 14, -4
+  95 0028 82B0     		sub	sp, sp, #8
+  96              	.LCFI7:
+  97              		.cfi_def_cfa_offset 16
+  98 002a 00AF     		add	r7, sp, #0
+  99              	.LCFI8:
+ 100              		.cfi_def_cfa_register 7
+   9:./Source/main.c ****     int ret;
+  10:./Source/main.c ****     ret = fun_add(1, 4, 5, 6);
+ 101              		.loc 1 10 11
+ 102 002c 0623     		movs	r3, #6
+ 103 002e 0522     		movs	r2, #5
+ 104 0030 0421     		movs	r1, #4
+ 105 0032 0120     		movs	r0, #1
+ 106 0034 FFF7FEFF 		bl	fun_add
+ 107 0038 7860     		str	r0, [r7, #4]
+  11:./Source/main.c ****     printf("Result = %d\n", ret);
+ 108              		.loc 1 11 5
+ 109 003a 7968     		ldr	r1, [r7, #4]
+ 110 003c 0148     		ldr	r0, .L5
+ 111 003e FFF7FEFF 		bl	printf
+ 112              	.L4:
+  12:./Source/main.c ****     for(;;);
+ 113              		.loc 1 12 5 discriminator 1
+ 114 0042 FEE7     		b	.L4
+ 115              	.L6:
+ 116              		.align	2
+ 117              	.L5:
+ 118 0044 00000000 		.word	.LC0
+ 119              		.cfi_endproc
+ 120              	.LFE4:
+ 122              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\ADMIN\AppData\Local\Temp\ccmIvy8x.s:18     .text:00000000 $t
+C:\Users\ADMIN\AppData\Local\Temp\ccmIvy8x.s:24     .text:00000000 fun_add
+C:\Users\ADMIN\AppData\Local\Temp\ccmIvy8x.s:74     .rodata:00000000 $d
+C:\Users\ADMIN\AppData\Local\Temp\ccmIvy8x.s:84     .text:00000026 main
+C:\Users\ADMIN\AppData\Local\Temp\ccmIvy8x.s:118    .text:00000044 $d
+
+UNDEFINED SYMBOLS
+printf
