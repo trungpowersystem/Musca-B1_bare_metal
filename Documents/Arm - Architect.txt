@@ -17,7 +17,7 @@ Whenever the core meets with the system exception or any external interrupts the
 
 That doesn’t mean that thread mode codes will not have privileged access level, of course they have. By default, all thread mode codes have privileged access level. That ‘s reason why I’m able to change a system specific register of the processor.
 
-You can restrict thread mode as unprivileged not handler mode code ny changing access level to unprivileged
+You can restrict thread mode as unprivileged not handler mode code by changing access level to unprivileged
 
 ====================================================
 General purpose registers (R0 - R12)
@@ -214,7 +214,7 @@ There are in total 15 system exceptions support by the Arm Cortex M processor
 And 240 interrupt, so in total cortex m processor support 255 exceptions 
 
 ====================================================
-Different exeption model
+Different exception model
 There is room for 15 system exceptions
 Exception number 1 is Reset Exception (or Reset System Exception)
 Only 9 implemented System Exceptions. 6 are reserved for future implementations
@@ -244,5 +244,14 @@ Using NVIC registers to enable/disable/pending various interrupts and read the s
 
 You can configure the priority and priority grouping of various interrupts
 
-It is called as "Nested" because it supports pre-empting a lower priority interrupt handler when higher priority intterupt arrives	
+It is called as "Nested" because it supports pre-empting a lower priority interrupt handler when higher priority intterupt arrives
+
+====================================================
+NVIC registers
+
+NVIC_ISER: Set enable register
+NVIC_ICER: Clear enable register
+NVIC_ISPR: Set pending register
+NVIC_ICPR: Clear pending register
+NVIC_IABR: Active bit register
 
