@@ -1,0 +1,248 @@
+====================================================
+Processor core, processor and microcontroller
+
+
+====================================================
+Operational mode of the processor
+M0/M3/M4
+
+Type:
+Thread mode
+Handler mode
+
+All your applications code will be executed under "Thread mode" of the processor. This is also called as "User Mode“.
+Processor always starts with "Thread mode"
+
+Whenever the core meets with the system exception or any external interrupts then the core will change its mode to handler mode in order to service the ISR associated with that system exception or the interrupt. In this mode, you can touch any resources you want (system level registers of processor, interrupt configuration, control registers, …) because this mode always executes in privileged access level
+
+That doesn’t mean that thread mode codes will not have privileged access level, of course they have. By default, all thread mode codes have privileged access level. That ‘s reason why I’m able to change a system specific register of the processor.
+
+You can restrict thread mode as unprivileged not handler mode code ny changing access level to unprivileged
+
+====================================================
+General purpose registers (R0 - R12)
+R13: SP Stack pointer
+R14: LR Link register and used to hold the return information during function call and exception handling
+R15: PC which holds the address of the next instruction to be executed
+
+Special register
+PSR: Program status register combines
++ Application Program Status Register (IPSR)
++ Interrupt Program Status Register (IPSR)
++ Excution Program Status Register (EPSR)
+
+If 'T' bit of the EPSR is set(1). processor thinks that the next instruction which it is about to execute is from "Thumb ISA"
+If 'T' bit of the EPSR is set(0). processor thinks that the next instruction which it is about to execute is from "Arm ISA"
+
+
+Non-memory mapped registers: (General purpose register + Special register)
++ The registers do not have unique address to access them. Hence there are not part of the processor memory map
++ You cannot access these register in a 'C' program using address dereferencing
++ To access these register, you have to use assembly instructions (mov, ...)
+
+Memory mapped registers: (Register of the processor specific peripherals, NVIC, MPU, SCB, DEBUG, ... + Register of the microcontroller specific peripherals RTC, I2C, TIMER, CAN, USB, ...)
++ Every register has its address in the processor memory map
++ You can access these register in a 'C' program using address dereferencing
+
+Inline assembly coding
+
+__asm volatile (
+	"LDR R0, [R1]\n\t"
+	"LDR R0, [R1]\n\t"
+	"LDR R0, [R1]\n\t"
+	);
+	
+__asm volatile(code : output operand list : input operand list : clobber list);
++ volatile attribute to the asm statement to instruct the compiler not to optimize the assembler code
++ code: assembly mnemonic defined as a single string
++ output operand list: a list of output operands separated by commas
++ input operand list: a list of inpout operands separated by commas
++ clobber list: Is mainly used to tell the compiler about modifications done by  assembler code
+
+Input/output operands and Constraint string
+Each inputt and output operand is described by a constaint string followed by a C expression in parentheses
+
+Input/ouput operand format:
+"<Constaint string>" ( < 'C' expression>)
+
+Example:
+__asm volatile("MOV R0, %0"::"r"(val));
+
+Example2: Move the content of CONTROL reg to 'C' variable "control_reg"
+
+uint32_t control_reg
+Constraint modifier
+= Write-only operand, usually used for all ouput operands
++ Read-write operand, must be listed as an output operand
+& A register that should be used for output only
+
+====================================================
+Reset sequence of the Cortex M Processor
+1) When you reset the processor, the PC is load with the value 0x0000_0000
+2) Then processor reads the value at memory location 0x0000_0000 into MSP
+MSP is a main stack pointer register
+That means, processor first initializes the stack pointer
+
+3) After that processor reads the value at memory location 0x0000_0004 into PC
+That value is actually address of the Reset_Handler
+
+4) Pc jumps to the Reset_Handler
+5) A reset handler is just a C or assembly function written by you to carry out any initializations required
+6) From reset handler you call your main() function of the application
+
+====================================================
+MEMORY MAP of the processor
+
+Memory map explains mapping of different peripheral register and memories in the processor addressable memory location range
+
+The processor, addressable memory location range, depends upon the size of the address bus.
+
+The mapping of the different regions in the addressable memory location is called 'memory map'
+
+CODE regions (0x0 -> 0x1FFF FFFF
+	This is region where the MCU vendors should connect CODE memory
+	Different type of CODE memories ares: Embedded flash, ROM, OTP, EEPROM, etc
+	Processor by default fetches vector table information from this region reight after reset
+
+SRAM region (0x2000 0000 -> 0x3FFF FFFF)
+	The SRAM (Static-RAM) region is in the net 512MB of memory space after the CODE region.
+	It is primarily for connecting SRAM, mostly on-chip SRAM.
+	The first 1MB of SRAM region is a bit addressable
+	You can also execute program code from region
+
+Peripherals regions (0x4000 0000 -> 0x5FFF FFFF)
+	The peripheral memory region has the size of 512MB
+	Used mostly for on-chip peripheras not processor peripherals
+	Like the SRAM region, the first 1MB of the peripheral regionis bit addressable if the optional bit-band feature	is included
+	This is an execute never (XN) region
+	Trying to excute code from this region will trigger fault exception
+
+External RAM regions (0x6000 0000 -> 0x9FFF FFFF)
+	This region is intend for either on-chip or off-chip memory
+	You can excute code in this region
+	
+External Device Region (0xA000 0000 -> 0xDFFF FFFF)
+	This region is intend for external devices and/or shared memory
+	This is an execute never (XN) region
+	
+Private peripheral bus region (0xE000 0000 -> 0xE00F FFFF)
+	This region includes the NVIC, System timer. and system control block
+	This is an execute never (XN) region
+
+====================================================
+Bit banding
+It is the capability to address a single bit of a memory address
+This feature is optional 
+
+Alias address = alias_base + (32 *(bit_band_memory_addr - bit_band_base)) + bit * 4
+
+====================================================
+Stack memory
+
+Stack memory is part of the main memory (internal RAM or external RAM) reserved for the temporary storage data (transient data)
+Mainly used during function, interrupt/ exception handling
+Stack memory is accessed in last in first out (LIFO)
+The statck can be accessed using PUSH and POP instructions or using any memory manipulation instructions (LD, STR)
+The stack is traced using a stack pointer (SP) register. PUSH and POP instructions affect (decrement or increment) stack pointer register (SP, R13)
+
+Stack memory uses
+
+The temporary storage of processor register values
+The temporary storage of local variable of the function
+During system exception or interrupt, stack memory will be used to save the context (some general-purpose registers, proccessor status register, return address) of the currently ececuting code
+
+Different stack operation models
+Full ascending stack (FA)
+Full descending stack (FD) (Arm Cortex Mx processors use this)
+Empty ascending stack (EA)
+Empty descending stack (ED)
+
+Banked stack pointer
+
+Cortex M Processor physically has 3 stack pointers SP (R13), MSP and FSP
+MSP: Main stack pointer
+PSP: Process stack pointer
+
+SP is called as current stack pointer.
+
+After processor reset, by default, MSP{ will be selected as current stack pointer. That means, SP copies the contents of MSP
+
+Thread mode can change the current stack pointer to PSP by configuring the CONTROL register, SPSEL bit
+
+Handler mode code execution will always use MSP as the current stack pointer. That also means that, changing the value SPSEL doesn't make sense
+
+MSP will be initialized automatically by the processor after reset by reading the content of address 0x0000 0000
+
+If you want to use the PSP then make sure that you initialize the PSP to valid stack address in your code
+
+naked function
+
+====================================================
+Reset sequence
+
+When you reset the processor, the PC is load with the value 0x0000 0000
+
+Then processor reads the value at memory location 0x0000 0000 into MSP. That means, processor first initializes the stack pointer
+
+After proccessor reads the value at 0x0000 0004 into PC
+
+PC jump to Reset_Handler
+
+A reset handler is just a C or assembly function
+
+From reset handler, you call your main() function of the application
+
+====================================================
+Exception model
+
+What is exception?
+Anything disturbs the normal operation of the program by changing the operation mode of the processor
+
+Types:
+1. System interrupts.
+2. Interrupts.
+
+What are system exceptions?
+Are generated by the processor itself internally
+
+What are interrupts
+Come from the external world to the processor
+
+Whenever the processor core meeets with an exception it changes the operation mode to "Handler mode"
+
+There are in total 15 system exceptions support by the Arm Cortex M processor
+And 240 interrupt, so in total cortex m processor support 255 exceptions 
+
+====================================================
+Different exeption model
+There is room for 15 system exceptions
+Exception number 1 is Reset Exception (or Reset System Exception)
+Only 9 implemented System Exceptions. 6 are reserved for future implementations
+Exception number 16 is interrupt 0 (IRQ 0)
+
+Private peripheral bus (PPB) contains proccessor peripheral registers
+- System control block registers
+System Handler Control and State Register: Activated some system exceptions
+
+SCB registers:
++ Enable fault handler
++ Get pending status of the fault exceptions
++ Trap processor for devide by zero and unaligned data access attempts
++ Control sleep and sleep wakeup settings
++ Configure the priority of system exceptions
++ Systick timer control and status
+
+====================================================
+NVIC (Nested Vector interrupt controller)
+
+NVIC is one of the peripheral of the Cortex M proccessor core
+
+It is used to configure 240 interrupts
+This is highly vendor specific and it is triggered by various on chip peripheral of the MCU like SPI, GPIO, UART, Timer...
+
+Using NVIC registers to enable/disable/pending various interrupts and read the status of the active and pending interrupt
+
+You can configure the priority and priority grouping of various interrupts
+
+It is called as "Nested" because it supports pre-empting a lower priority interrupt handler when higher priority intterupt arrives	
+

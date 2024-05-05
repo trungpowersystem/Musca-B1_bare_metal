@@ -1,0 +1,70 @@
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu softvfp
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.align	1
+  19              		.global	main
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	main:
+  25              	.LFB3:
+  26              		.file 1 "./Source/main.c"
+   1:./Source/main.c **** #include "stdio.h"
+   2:./Source/main.c **** 
+   3:./Source/main.c **** int main(void)
+   4:./Source/main.c **** {
+  27              		.loc 1 4 1
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+  39 0004 00AF     		add	r7, sp, #0
+  40              	.LCFI2:
+  41              		.cfi_def_cfa_register 7
+   5:./Source/main.c ****     int val = 50;
+  42              		.loc 1 5 9
+  43 0006 3223     		movs	r3, #50
+  44 0008 7B60     		str	r3, [r7, #4]
+   6:./Source/main.c ****     __asm volatile("MOV R0,%0": : "r"(val));
+  45              		.loc 1 6 5
+  46 000a 7B68     		ldr	r3, [r7, #4]
+  47              		.syntax unified
+  48              	@ 6 "./Source/main.c" 1
+  49 000c 1846     		MOV R0,r3
+  50              	@ 0 "" 2
+  51              		.thumb
+  52              		.syntax unified
+  53              	.L2:
+   7:./Source/main.c ****     for(;;);
+  54              		.loc 1 7 5 discriminator 1
+  55 000e FEE7     		b	.L2
+  56              		.cfi_endproc
+  57              	.LFE3:
+  59              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccVAZdov.s:18     .text:00000000 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccVAZdov.s:24     .text:00000000 main
+
+NO UNDEFINED SYMBOLS
