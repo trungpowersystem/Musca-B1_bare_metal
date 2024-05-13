@@ -1,0 +1,318 @@
+   1              		.cpu cortex-m33
+   2              		.arch armv8-m.main
+   3              		.fpu softvfp
+   4              		.arch_extension dsp
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.file 1 "./Source/main.c"
+  19              		.global	pNVIC_IPRBase
+  20              		.data
+  21              		.align	2
+  24              	pNVIC_IPRBase:
+  25 0000 00E400E0 		.word	-536812544
+  26              		.global	pNVIC_ISERBase
+  27              		.align	2
+  30              	pNVIC_ISERBase:
+  31 0004 00E100E0 		.word	-536813312
+  32              		.global	pNVIC_ISPRBase
+  33              		.align	2
+  36              	pNVIC_ISPRBase:
+  37 0008 00E200E0 		.word	-536813056
+  38              		.text
+  39              		.align	1
+  40              		.global	config_priority_interrupt
+  41              		.syntax unified
+  42              		.thumb
+  43              		.thumb_func
+  45              	config_priority_interrupt:
+  46              	.LFB3:
+   1:./Source/main.c **** #include "stdio.h"
+   2:./Source/main.c **** #include "stdint.h"
+   3:./Source/main.c **** 
+   4:./Source/main.c **** #define IRQ3NUM 3
+   5:./Source/main.c **** #define IRQ8NUM 8
+   6:./Source/main.c **** 
+   7:./Source/main.c **** uint32_t *pNVIC_IPRBase = (uint32_t *)0xE000E400;
+   8:./Source/main.c **** uint32_t *pNVIC_ISERBase = (uint32_t *)0xE000E100;
+   9:./Source/main.c **** uint32_t *pNVIC_ISPRBase = (uint32_t *)0xE000E200;
+  10:./Source/main.c **** 
+  11:./Source/main.c **** void config_priority_interrupt(uint8_t irqNum, uint8_t irqPriorityValue) {
+  47              		.loc 1 11 74
+  48              		.cfi_startproc
+  49              		@ args = 0, pretend = 0, frame = 24
+  50              		@ frame_needed = 1, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52 0000 80B4     		push	{r7}
+  53              	.LCFI0:
+  54              		.cfi_def_cfa_offset 4
+  55              		.cfi_offset 7, -4
+  56 0002 87B0     		sub	sp, sp, #28
+  57              	.LCFI1:
+  58              		.cfi_def_cfa_offset 32
+  59 0004 00AF     		add	r7, sp, #0
+  60              	.LCFI2:
+  61              		.cfi_def_cfa_register 7
+  62 0006 0346     		mov	r3, r0
+  63 0008 0A46     		mov	r2, r1
+  64 000a FB71     		strb	r3, [r7, #7]
+  65 000c 1346     		mov	r3, r2
+  66 000e BB71     		strb	r3, [r7, #6]
+  12:./Source/main.c ****     // Find iprx
+  13:./Source/main.c ****     uint8_t iprX = irqNum / 4;
+  67              		.loc 1 13 13
+  68 0010 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  69 0012 9B08     		lsrs	r3, r3, #2
+  70 0014 FB75     		strb	r3, [r7, #23]
+  14:./Source/main.c ****     uint32_t *ipr = pNVIC_IPRBase + iprX;
+  71              		.loc 1 14 35
+  72 0016 124B     		ldr	r3, .L2
+  73 0018 1A68     		ldr	r2, [r3]
+  74 001a FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+  75 001c 9B00     		lsls	r3, r3, #2
+  76              		.loc 1 14 15
+  77 001e 1344     		add	r3, r3, r2
+  78 0020 3B61     		str	r3, [r7, #16]
+  15:./Source/main.c **** 
+  16:./Source/main.c ****     // Position in iprx
+  17:./Source/main.c ****     uint8_t pos = (irqNum % 4) * 8;
+  79              		.loc 1 17 13
+  80 0022 FB79     		ldrb	r3, [r7, #7]
+  81 0024 03F00303 		and	r3, r3, #3
+  82 0028 DBB2     		uxtb	r3, r3
+  83 002a DB00     		lsls	r3, r3, #3
+  84 002c FB73     		strb	r3, [r7, #15]
+  18:./Source/main.c **** 
+  19:./Source/main.c ****     // Config the priority
+  20:./Source/main.c ****     *ipr &= ~(0xff << pos);             // Clear old value
+  85              		.loc 1 20 5
+  86 002e 3B69     		ldr	r3, [r7, #16]
+  87 0030 1B68     		ldr	r3, [r3]
+  88              		.loc 1 20 20
+  89 0032 FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
+  90 0034 FF21     		movs	r1, #255
+  91 0036 01FA02F2 		lsl	r2, r1, r2
+  92              		.loc 1 20 13
+  93 003a D243     		mvns	r2, r2
+  94              		.loc 1 20 10
+  95 003c 1A40     		ands	r2, r2, r3
+  96 003e 3B69     		ldr	r3, [r7, #16]
+  97 0040 1A60     		str	r2, [r3]
+  21:./Source/main.c ****     *ipr |= (irqPriorityValue << pos);  // Set new value
+  98              		.loc 1 21 5
+  99 0042 3B69     		ldr	r3, [r7, #16]
+ 100 0044 1B68     		ldr	r3, [r3]
+ 101              		.loc 1 21 31
+ 102 0046 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 103 0048 FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
+ 104 004a 01FA02F2 		lsl	r2, r1, r2
+ 105              		.loc 1 21 10
+ 106 004e 1A43     		orrs	r2, r2, r3
+ 107 0050 3B69     		ldr	r3, [r7, #16]
+ 108 0052 1A60     		str	r2, [r3]
+  22:./Source/main.c **** }
+ 109              		.loc 1 22 1
+ 110 0054 00BF     		nop
+ 111 0056 1C37     		adds	r7, r7, #28
+ 112              	.LCFI3:
+ 113              		.cfi_def_cfa_offset 4
+ 114 0058 BD46     		mov	sp, r7
+ 115              	.LCFI4:
+ 116              		.cfi_def_cfa_register 13
+ 117              		@ sp needed
+ 118 005a 80BC     		pop	{r7}
+ 119              	.LCFI5:
+ 120              		.cfi_restore 7
+ 121              		.cfi_def_cfa_offset 0
+ 122 005c 7047     		bx	lr
+ 123              	.L3:
+ 124 005e 00BF     		.align	2
+ 125              	.L2:
+ 126 0060 00000000 		.word	pNVIC_IPRBase
+ 127              		.cfi_endproc
+ 128              	.LFE3:
+ 130              		.align	1
+ 131              		.global	main
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 136              	main:
+ 137              	.LFB4:
+  23:./Source/main.c **** 
+  24:./Source/main.c **** int main(void)
+  25:./Source/main.c **** {
+ 138              		.loc 1 25 1
+ 139              		.cfi_startproc
+ 140              		@ args = 0, pretend = 0, frame = 0
+ 141              		@ frame_needed = 1, uses_anonymous_args = 0
+ 142 0064 80B5     		push	{r7, lr}
+ 143              	.LCFI6:
+ 144              		.cfi_def_cfa_offset 8
+ 145              		.cfi_offset 7, -8
+ 146              		.cfi_offset 14, -4
+ 147 0066 00AF     		add	r7, sp, #0
+ 148              	.LCFI7:
+ 149              		.cfi_def_cfa_register 7
+  26:./Source/main.c ****     // Hello, Boot sequence is finished. I'm in main function now!!
+  27:./Source/main.c **** 
+  28:./Source/main.c ****     // Config priority for interrupts
+  29:./Source/main.c ****     config_priority_interrupt(IRQ3NUM, 0xA);
+ 150              		.loc 1 29 5
+ 151 0068 0A21     		movs	r1, #10
+ 152 006a 0320     		movs	r0, #3
+ 153 006c FFF7FEFF 		bl	config_priority_interrupt
+  30:./Source/main.c ****     config_priority_interrupt(IRQ8NUM, 0xA);
+ 154              		.loc 1 30 5
+ 155 0070 0A21     		movs	r1, #10
+ 156 0072 0820     		movs	r0, #8
+ 157 0074 FFF7FEFF 		bl	config_priority_interrupt
+  31:./Source/main.c **** 
+  32:./Source/main.c ****     // Set the interrupt pending bit in the NVIC IPR
+  33:./Source/main.c ****     *pNVIC_ISPRBase |= (1 << IRQ3NUM);
+ 158              		.loc 1 33 5
+ 159 0078 0D4B     		ldr	r3, .L6
+ 160 007a 1B68     		ldr	r3, [r3]
+ 161 007c 1A68     		ldr	r2, [r3]
+ 162 007e 0C4B     		ldr	r3, .L6
+ 163 0080 1B68     		ldr	r3, [r3]
+ 164              		.loc 1 33 21
+ 165 0082 42F00802 		orr	r2, r2, #8
+ 166 0086 1A60     		str	r2, [r3]
+  34:./Source/main.c **** 
+  35:./Source/main.c ****     // Enable the interrupt in NVIC
+  36:./Source/main.c ****     *pNVIC_ISERBase |= (1 << IRQ3NUM);
+ 167              		.loc 1 36 5
+ 168 0088 0A4B     		ldr	r3, .L6+4
+ 169 008a 1B68     		ldr	r3, [r3]
+ 170 008c 1A68     		ldr	r2, [r3]
+ 171 008e 094B     		ldr	r3, .L6+4
+ 172 0090 1B68     		ldr	r3, [r3]
+ 173              		.loc 1 36 21
+ 174 0092 42F00802 		orr	r2, r2, #8
+ 175 0096 1A60     		str	r2, [r3]
+  37:./Source/main.c ****     *pNVIC_ISERBase |= (1 << IRQ8NUM);
+ 176              		.loc 1 37 5
+ 177 0098 064B     		ldr	r3, .L6+4
+ 178 009a 1B68     		ldr	r3, [r3]
+ 179 009c 1A68     		ldr	r2, [r3]
+ 180 009e 054B     		ldr	r3, .L6+4
+ 181 00a0 1B68     		ldr	r3, [r3]
+ 182              		.loc 1 37 21
+ 183 00a2 42F48072 		orr	r2, r2, #256
+ 184 00a6 1A60     		str	r2, [r3]
+  38:./Source/main.c ****     return 0;
+ 185              		.loc 1 38 12
+ 186 00a8 0023     		movs	r3, #0
+  39:./Source/main.c **** }
+ 187              		.loc 1 39 1
+ 188 00aa 1846     		mov	r0, r3
+ 189 00ac 80BD     		pop	{r7, pc}
+ 190              	.L7:
+ 191 00ae 00BF     		.align	2
+ 192              	.L6:
+ 193 00b0 00000000 		.word	pNVIC_ISPRBase
+ 194 00b4 00000000 		.word	pNVIC_ISERBase
+ 195              		.cfi_endproc
+ 196              	.LFE4:
+ 198              		.align	1
+ 199              		.global	Interrupt3_Handler
+ 200              		.syntax unified
+ 201              		.thumb
+ 202              		.thumb_func
+ 204              	Interrupt3_Handler:
+ 205              	.LFB5:
+  40:./Source/main.c **** 
+  41:./Source/main.c **** void Interrupt3_Handler(void) {
+ 206              		.loc 1 41 31
+ 207              		.cfi_startproc
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 1, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
+ 211 00b8 80B4     		push	{r7}
+ 212              	.LCFI8:
+ 213              		.cfi_def_cfa_offset 4
+ 214              		.cfi_offset 7, -4
+ 215 00ba 00AF     		add	r7, sp, #0
+ 216              	.LCFI9:
+ 217              		.cfi_def_cfa_register 7
+  42:./Source/main.c ****     //I'm in interrupt 3 handler
+  43:./Source/main.c **** }
+ 218              		.loc 1 43 1
+ 219 00bc 00BF     		nop
+ 220 00be BD46     		mov	sp, r7
+ 221              	.LCFI10:
+ 222              		.cfi_def_cfa_register 13
+ 223              		@ sp needed
+ 224 00c0 80BC     		pop	{r7}
+ 225              	.LCFI11:
+ 226              		.cfi_restore 7
+ 227              		.cfi_def_cfa_offset 0
+ 228 00c2 7047     		bx	lr
+ 229              		.cfi_endproc
+ 230              	.LFE5:
+ 232              		.align	1
+ 233              		.global	Interrupt8_Handler
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 238              	Interrupt8_Handler:
+ 239              	.LFB6:
+  44:./Source/main.c **** 
+  45:./Source/main.c **** void Interrupt8_Handler(void) {
+ 240              		.loc 1 45 31
+ 241              		.cfi_startproc
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 1, uses_anonymous_args = 0
+ 244              		@ link register save eliminated.
+ 245 00c4 80B4     		push	{r7}
+ 246              	.LCFI12:
+ 247              		.cfi_def_cfa_offset 4
+ 248              		.cfi_offset 7, -4
+ 249 00c6 00AF     		add	r7, sp, #0
+ 250              	.LCFI13:
+ 251              		.cfi_def_cfa_register 7
+  46:./Source/main.c ****     //I'm in interrupt 8 handler
+  47:./Source/main.c **** }...
+ 252              		.loc 1 47 1
+ 253 00c8 00BF     		nop
+ 254 00ca BD46     		mov	sp, r7
+ 255              	.LCFI14:
+ 256              		.cfi_def_cfa_register 13
+ 257              		@ sp needed
+ 258 00cc 80BC     		pop	{r7}
+ 259              	.LCFI15:
+ 260              		.cfi_restore 7
+ 261              		.cfi_def_cfa_offset 0
+ 262 00ce 7047     		bx	lr
+ 263              		.cfi_endproc
+ 264              	.LFE6:
+ 266              	.Letext0:
+ 267              		.file 2 "C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/arm-none-
+ 268              		.file 3 "C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/arm-none-
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:24     .data:00000000 pNVIC_IPRBase
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:21     .data:00000000 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:30     .data:00000004 pNVIC_ISERBase
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:36     .data:00000008 pNVIC_ISPRBase
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:39     .text:00000000 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:45     .text:00000000 config_priority_interrupt
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:126    .text:00000060 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:130    .text:00000064 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:136    .text:00000064 main
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:193    .text:000000b0 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:198    .text:000000b8 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:204    .text:000000b8 Interrupt3_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccl8TIHM.s:238    .text:000000c4 Interrupt8_Handler
+
+NO UNDEFINED SYMBOLS
