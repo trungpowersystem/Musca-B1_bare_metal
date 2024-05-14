@@ -1,78 +1,290 @@
 Archive member included to satisfy reference by file (symbol)
 
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o (exit)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o) (__stdio_exit_handler)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o) (_fwalk_sglue)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o) (__sread)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o (memset)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o) (_close_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o) (errno)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o) (_impure_ptr)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o) (_lseek_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o) (_read_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o) (_write_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o (__libc_init_array)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o) (__call_exitprocs)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o) (atexit)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o) (_free_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o) (_malloc_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o) (__malloc_lock)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o) (_fclose_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o) (__sflush_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o) (_sbrk_r)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o) (__libc_fini_array)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o) (sysconf)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o) (__register_exitproc)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o) (__errno)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o) (_close)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o) (_lseek)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o) (_read)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o) (_sbrk)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o) (_write)
-C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
-                              C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o) (_exit)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o (exit)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o) (__stdio_exit_handler)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o) (_fwalk_sglue)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o) (__sread)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o (memset)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o) (_close_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o) (errno)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o) (_impure_ptr)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o) (_lseek_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o) (_read_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o) (_write_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o (__libc_init_array)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o) (_free_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o) (_malloc_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o) (__malloc_lock)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o) (_fflush_r)
+C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+                              C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o) (_sbrk_r)
 
 Discarded input sections
 
- .gnu.warning._close
-                0x00000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
- .gnu.warning._lseek
-                0x00000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
- .gnu.warning._read
-                0x00000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
- .gnu.warning._write
-                0x00000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .rodata.all_implied_fbits
+                0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .data.__dso_handle
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .text          0x00000000       0x7c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .ARM.extab     0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .ARM.exidx     0x00000000       0x10 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .debug_line_str
+                0x00000000       0xd7 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .ARM.attributes
+                0x00000000       0x20 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+ .bss           0x00000000        0x0 ./Debug/main.o
+ .data          0x00000000        0x0 ./Debug/startup_Musca-B1.o
+ .bss           0x00000000        0x0 ./Debug/startup_Musca-B1.o
+ .bss           0x00000000        0x0 ./Debug/system_Musca-B1.o
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+ .text.exit     0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+ .debug_frame   0x00000000       0x28 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-exit.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.std      0x00000000       0x6c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.stdio_exit_handler
+                0x00000000       0x18 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.cleanup_stdio
+                0x00000000       0x40 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__fp_lock
+                0x00000000       0x18 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__fp_unlock
+                0x00000000       0x18 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.global_stdio_init.part.0
+                0x00000000       0x3c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__sfp_lock_acquire
+                0x00000000        0xc C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__sfp_lock_release
+                0x00000000        0xc C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__sfp    0x00000000       0xa4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__sinit  0x00000000       0x30 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__fp_lock_all
+                0x00000000       0x1c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text.__fp_unlock_all
+                0x00000000       0x1c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .data.__sglue  0x00000000        0xc C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .bss.__sf      0x00000000      0x138 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .bss.__stdio_exit_handler
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .debug_frame   0x00000000      0x144 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-findfp.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+ .text._fwalk_sglue
+                0x00000000       0x3c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+ .debug_frame   0x00000000       0x34 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fwalk.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .text.__sread  0x00000000       0x22 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .text.__seofread
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .text.__swrite
+                0x00000000       0x38 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .text.__sseek  0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .text.__sclose
+                0x00000000        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .debug_frame   0x00000000       0x88 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-stdio.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+ .text.memset   0x00000000       0x10 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+ .debug_frame   0x00000000       0x20 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-memset.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+ .text._close_r
+                0x00000000       0x20 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-closer.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0xac C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .bss.errno     0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .debug_frame   0x00000000       0x38 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-reent.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+ .data._impure_data
+                0x00000000       0x4c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-impure.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+ .text._lseek_r
+                0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lseekr.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+ .text._read_r  0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-readr.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+ .text._write_r
+                0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-writer.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+ .text.__libc_init_array
+                0x00000000       0x48 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-init.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_init
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_init_recursive
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_close
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_close_recursive
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_acquire
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_acquire_recursive
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_try_acquire
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_try_acquire_recursive
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_release
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_release_recursive
+                0x00000000        0x2 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___arc4random_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___dd_hash_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___tz_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___env_recursive_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___malloc_recursive_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___at_quick_exit_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___atexit_recursive_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .bss.__lock___sfp_recursive_mutex
+                0x00000000        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .debug_frame   0x00000000       0xb0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-lock.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+ .text._free_r  0x00000000       0x94 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+ .debug_frame   0x00000000       0x38 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-freer.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .text.sbrk_aligned
+                0x00000000       0x44 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .text._malloc_r
+                0x00000000      0x100 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .bss.__malloc_sbrk_start
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .bss.__malloc_free_list
+                0x00000000        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .debug_frame   0x00000000       0x50 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mallocr.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .text.__malloc_lock
+                0x00000000        0xc C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .text.__malloc_unlock
+                0x00000000        0xc C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .debug_frame   0x00000000       0x30 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-mlock.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .text.__sflush_r
+                0x00000000      0x100 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .text._fflush_r
+                0x00000000       0x50 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .text.fflush   0x00000000       0x28 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .debug_frame   0x00000000       0x5c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-fflush.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+ .text._sbrk_r  0x00000000       0x20 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+ .ARM.attributes
+                0x00000000       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a(libc_a-sbrkr.o)
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+ .rodata.all_implied_fbits
+                0x00000000       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+ .text          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+ .data          0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+ .bss           0x00000000        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
 
 Memory Configuration
 
@@ -83,24 +295,23 @@ RAM              0x20000000         0x00020000         xrw
 
 Linker script and memory map
 
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
 LOAD ./Debug/main.o
 LOAD ./Debug/startup_Musca-B1.o
 LOAD ./Debug/system_Musca-B1.o
 START GROUP
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libgcc.a
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libc.a
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libgcc.a
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg_nano.a
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libc_nano.a
 END GROUP
 START GROUP
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libgcc.a
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libc.a
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libgcc.a
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libc_nano.a
 END GROUP
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
-LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
                 0x10000000                        __ROM_BASE = 0x10000000
                 0x00200000                        __ROM_SIZE = 0x200000
                 0x20000000                        __RAM_BASE = 0x20000000
@@ -109,246 +320,56 @@ LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-
                 0x00000c00                        __HEAP_SIZE = 0xc00
                 0x00000000                        __STACKSEAL_SIZE = 0x0
 
-.text           0x10000000     0x1648
+.text           0x10000000      0x278
  *(.vectors)
  .vectors       0x10000000       0x68 ./Debug/startup_Musca-B1.o
                 0x10000000                __Vectors
  *(.text*)
- .text          0x10000068        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
- .text          0x10000068        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .text.deregister_tm_clones
-                0x10000068       0x1c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x10000068       0x1c C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .text.register_tm_clones
-                0x10000084       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x10000084       0x28 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .text.__do_global_dtors_aux
-                0x100000ac       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x100000ac       0x28 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .text.frame_dummy
-                0x100000d4       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .text          0x100000f8       0x7c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
-                0x100000f8                _stack_init
-                0x10000100                _start
-                0x10000100                _mainCRTStartup
- .text          0x10000174       0xd0 ./Debug/main.o
-                0x10000174                config_priority_interrupt
-                0x100001d8                main
-                0x1000022c                Interrupt3_Handler
-                0x10000238                Interrupt8_Handler
- .text          0x10000244       0x50 ./Debug/startup_Musca-B1.o
-                0x10000244                Reset_Handler
-                0x10000284                HardFault_Handler
-                0x1000028c                PendSV_Handler
-                0x1000028c                NMI_Handler
-                0x1000028c                Interrupt5_Handler
-                0x1000028c                UsageFault_Handler
-                0x1000028c                SysTick_Handler
-                0x1000028c                DebugMon_Handler
-                0x1000028c                Interrupt7_Handler
-                0x1000028c                Interrupt2_Handler
-                0x1000028c                Interrupt0_Handler
-                0x1000028c                Interrupt4_Handler
-                0x1000028c                SecureFault_Handler
-                0x1000028c                Default_Handler
-                0x1000028c                Interrupt9_Handler
-                0x1000028c                Interrupt6_Handler
-                0x1000028c                MemManage_Handler
-                0x1000028c                SVC_Handler
-                0x1000028c                Interrupt1_Handler
-                0x1000028c                BusFault_Handler
- .text          0x10000294       0x44 ./Debug/system_Musca-B1.o
-                0x10000294                SystemCoreClockUpdate
-                0x100002b0                SystemInit
- .text          0x100002d8        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
- .text.exit     0x100002d8       0x1c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
-                0x100002d8                exit
- .text          0x100002f4        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .text.stdio_exit_handler
-                0x100002f4       0x18 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .text.cleanup_stdio
-                0x1000030c       0x40 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .text.__fp_lock
-                0x1000034c       0x1c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .text.__fp_unlock
-                0x10000368       0x1c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .text.global_stdio_init.part.0
-                0x10000384       0xf0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .text.__sfp    0x10000474       0xc0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x10000474                __sfp
- .text.__sinit  0x10000534       0x3c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x10000534                __sinit
- .text.__sfp_lock_acquire
-                0x10000570        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x10000570                __sfp_lock_acquire
- .text.__sfp_lock_release
-                0x1000057c        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x1000057c                __sfp_lock_release
- .text.__fp_lock_all
-                0x10000588       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x10000588                __fp_lock_all
- .text.__fp_unlock_all
-                0x100005ac       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x100005ac                __fp_unlock_all
- .text          0x100005d0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
- .text._fwalk_sglue
-                0x100005d0       0x44 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
-                0x100005d0                _fwalk_sglue
- .text          0x10000614        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
- .text.__sread  0x10000614       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
-                0x10000614                __sread
- .text.__seofread
-                0x10000638        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
-                0x10000638                __seofread
- .text.__swrite
-                0x1000063c       0x40 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
-                0x1000063c                __swrite
- .text.__sseek  0x1000067c       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
-                0x1000067c                __sseek
- .text.__sclose
-                0x100006a4        0x8 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
-                0x100006a4                __sclose
- .text          0x100006ac        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
- .text.memset   0x100006ac       0xa4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
-                0x100006ac                memset
- .text          0x10000750        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
- .text._close_r
-                0x10000750       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
-                0x10000750                _close_r
- .text          0x10000774        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
- .text._reclaim_reent
-                0x10000774       0x5c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
-                0x10000774                _reclaim_reent
- .text          0x100007d0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
- .text          0x100007d0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
- .text._lseek_r
-                0x100007d0       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
-                0x100007d0                _lseek_r
- .text          0x100007fc        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
- .text._read_r  0x100007fc       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
-                0x100007fc                _read_r
- .text          0x10000828        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
- .text._write_r
-                0x10000828       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
-                0x10000828                _write_r
- .text          0x10000854        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
- .text.__libc_init_array
-                0x10000854       0x50 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
-                0x10000854                __libc_init_array
- .text          0x100008a4        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
- .text.__retarget_lock_init
-                0x100008a4        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008a4                __retarget_lock_init
- .text.__retarget_lock_init_recursive
-                0x100008a8        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008a8                __retarget_lock_init_recursive
- .text.__retarget_lock_close
-                0x100008ac        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008ac                __retarget_lock_close
- .text.__retarget_lock_close_recursive
-                0x100008b0        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008b0                __retarget_lock_close_recursive
- .text.__retarget_lock_acquire
-                0x100008b4        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008b4                __retarget_lock_acquire
- .text.__retarget_lock_acquire_recursive
-                0x100008b8        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008b8                __retarget_lock_acquire_recursive
- .text.__retarget_lock_try_acquire
-                0x100008bc        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008bc                __retarget_lock_try_acquire
- .text.__retarget_lock_try_acquire_recursive
-                0x100008c0        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008c0                __retarget_lock_try_acquire_recursive
- .text.__retarget_lock_release
-                0x100008c4        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008c4                __retarget_lock_release
- .text.__retarget_lock_release_recursive
-                0x100008c8        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x100008c8                __retarget_lock_release_recursive
- .text          0x100008cc        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
- .text.startup.register_fini
-                0x100008cc       0x14 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
- .text.__call_exitprocs
-                0x100008e0       0xbc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
-                0x100008e0                __call_exitprocs
- .text          0x1000099c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
- .text.atexit   0x1000099c        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
-                0x1000099c                atexit
- .text          0x100009a8        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
- .text._malloc_trim_r
-                0x100009a8       0xb8 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
-                0x100009a8                _malloc_trim_r
- .text._free_r  0x10000a60      0x1f8 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
-                0x10000a60                _free_r
- .text          0x10000c58        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
- .text._malloc_r
-                0x10000c58      0x558 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x10000c58                _malloc_r
- .text          0x100011b0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
- .text.__malloc_lock
-                0x100011b0        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
-                0x100011b0                __malloc_lock
- .text.__malloc_unlock
-                0x100011bc        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
-                0x100011bc                __malloc_unlock
- .text          0x100011c8        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
- .text._fclose_r
-                0x100011c8       0xc0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
-                0x100011c8                _fclose_r
- .text.fclose   0x10001288       0x10 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
-                0x10001288                fclose
- .text          0x10001298        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
- .text.__sflush_r
-                0x10001298      0x128 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
-                0x10001298                __sflush_r
- .text._fflush_r
-                0x100013c0       0x54 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
-                0x100013c0                _fflush_r
- .text.fflush   0x10001414       0x74 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
-                0x10001414                fflush
- .text          0x10001488        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
- .text._sbrk_r  0x10001488       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
-                0x10001488                _sbrk_r
- .text          0x100014ac        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
- .text.__libc_fini_array
-                0x100014ac       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
-                0x100014ac                __libc_fini_array
- .text          0x100014d4        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
- .text.sysconf  0x100014d4       0x1c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
-                0x100014d4                sysconf
- .text          0x100014f0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
- .text.__register_exitproc
-                0x100014f0       0x84 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
-                0x100014f0                __register_exitproc
- .text          0x10001574        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
- .text.__errno  0x10001574        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
-                0x10001574                __errno
- .text          0x10001580        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
- .text._close   0x10001580       0x10 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
-                0x10001580                _close
- .text          0x10001590        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
- .text._lseek   0x10001590       0x10 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
-                0x10001590                _lseek
- .text          0x100015a0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
- .text._read    0x100015a0       0x10 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
-                0x100015a0                _read
- .text          0x100015b0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
- .text._sbrk    0x100015b0       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
-                0x100015b0                _sbrk
- .text          0x100015d0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
- .text._write   0x100015d0       0x10 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
-                0x100015d0                _write
- .text          0x100015e0        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
- .text._exit    0x100015e0        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
-                0x100015e0                _exit
- .text          0x100015e4        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
- .text          0x100015e4        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+                0x100000d4       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .text          0x100000f8       0xd0 ./Debug/main.o
+                0x100000f8                config_priority_interrupt
+                0x1000015c                main
+                0x100001b0                Interrupt3_Handler
+                0x100001bc                Interrupt8_Handler
+ .text          0x100001c8       0x50 ./Debug/startup_Musca-B1.o
+                0x100001c8                Reset_Handler
+                0x10000208                HardFault_Handler
+                0x10000210                PendSV_Handler
+                0x10000210                NMI_Handler
+                0x10000210                Interrupt5_Handler
+                0x10000210                UsageFault_Handler
+                0x10000210                SysTick_Handler
+                0x10000210                DebugMon_Handler
+                0x10000210                Interrupt7_Handler
+                0x10000210                Interrupt2_Handler
+                0x10000210                Interrupt0_Handler
+                0x10000210                Interrupt4_Handler
+                0x10000210                SecureFault_Handler
+                0x10000210                Default_Handler
+                0x10000210                Interrupt9_Handler
+                0x10000210                Interrupt6_Handler
+                0x10000210                MemManage_Handler
+                0x10000210                SVC_Handler
+                0x10000210                Interrupt1_Handler
+                0x10000210                BusFault_Handler
+ .text          0x10000218       0x44 ./Debug/system_Musca-B1.o
+                0x10000218                SystemCoreClockUpdate
+                0x10000234                SystemInit
  *(.init)
- .init          0x100015e4        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
-                0x100015e4                _init
- .init          0x100015e8        0x8 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+ .init          0x1000025c        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+                0x1000025c                _init
+ .init          0x10000260        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
  *(.fini)
- .fini          0x100015f0        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
-                0x100015f0                _fini
- .fini          0x100015f4        0x8 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+ .fini          0x10000268        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+                0x10000268                _fini
+ .fini          0x1000026c        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -360,281 +381,113 @@ LOAD C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata.all_implied_fbits
-                0x100015fc       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .rodata.all_implied_fbits
-                0x10001620       0x24 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
  *(.eh_frame*)
- .eh_frame      0x10001644        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .eh_frame      0x10001644        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+ .eh_frame      0x10000274        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .eh_frame      0x10000274        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
 
-.glue_7         0x10001648        0x0
- .glue_7        0x10001648        0x0 linker stubs
+.glue_7         0x10000278        0x0
+ .glue_7        0x10000278        0x0 linker stubs
 
-.glue_7t        0x10001648        0x0
- .glue_7t       0x10001648        0x0 linker stubs
+.glue_7t        0x10000278        0x0
+ .glue_7t       0x10000278        0x0 linker stubs
 
-.vfp11_veneer   0x10001648        0x0
- .vfp11_veneer  0x10001648        0x0 linker stubs
+.vfp11_veneer   0x10000278        0x0
+ .vfp11_veneer  0x10000278        0x0 linker stubs
 
-.v4_bx          0x10001648        0x0
- .v4_bx         0x10001648        0x0 linker stubs
+.v4_bx          0x10000278        0x0
+ .v4_bx         0x10000278        0x0 linker stubs
 
-.iplt           0x10001648        0x0
- .iplt          0x10001648        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+.iplt           0x10000278        0x0
+ .iplt          0x10000278        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
 
-.ARM.extab      0x10001648        0x0
+.ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x10001648        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
-                0x10001648                        __exidx_start = .
+                0x10000278                        __exidx_start = .
 
-.ARM.exidx      0x10001648        0x8
+.ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x10001648        0x8 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
-                                 0x10 (size before relaxing)
-                0x10001650                        __exidx_end = .
+                0x10000278                        __exidx_end = .
 
-.rel.dyn        0x10001650        0x0
- .rel.iplt      0x10001650        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+.copy.table     0x10000278        0xc
+                0x10000278                        . = ALIGN (0x4)
+                0x10000278                        __copy_table_start__ = .
+                0x10000278        0x4 LONG 0x10000284 __etext
+                0x1000027c        0x4 LONG 0x20000000 __data_start__
+                0x10000280        0x4 LONG 0x6 ((__data_end__ - __data_start__) / 0x4)
+                0x10000284                        __copy_table_end__ = .
 
-.copy.table     0x10001650        0xc
-                0x10001650                        . = ALIGN (0x4)
-                0x10001650                        __copy_table_start__ = .
-                0x10001650        0x4 LONG 0x1000165c __etext
-                0x10001654        0x4 LONG 0x20000000 __data_start__
-                0x10001658        0x4 LONG 0x15b ((__data_end__ - __data_start__) / 0x4)
-                0x1000165c                        __copy_table_end__ = .
+.rel.dyn        0x10000284        0x0
+ .rel.iplt      0x10000284        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
 
-.zero.table     0x1000165c        0x0
-                0x1000165c                        . = ALIGN (0x4)
-                0x1000165c                        __zero_table_start__ = .
-                0x1000165c                        __zero_table_end__ = .
-                0x1000165c                        __etext = ALIGN (0x4)
+.zero.table     0x10000284        0x0
+                0x10000284                        . = ALIGN (0x4)
+                0x10000284                        __zero_table_start__ = .
+                0x10000284                        __zero_table_end__ = .
+                0x10000284                        __etext = ALIGN (0x4)
 
-.data           0x20000000      0x56c load address 0x1000165c
+.data           0x20000000       0x18 load address 0x10000284
                 0x20000000                        __data_start__ = .
  *(vtable)
  *(.data)
- .data          0x20000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
- .data          0x20000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .data          0x20000000        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
  .data          0x20000000        0xc ./Debug/main.o
                 0x20000000                pNVIC_IPRBase
                 0x20000004                pNVIC_ISERBase
                 0x20000008                pNVIC_ISPRBase
- .data          0x2000000c        0x0 ./Debug/startup_Musca-B1.o
  .data          0x2000000c        0x4 ./Debug/system_Musca-B1.o
                 0x2000000c                SystemCoreClock
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
- .data          0x20000010        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
  *(.data.*)
- .data.__dso_handle
-                0x20000010        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
-                0x20000010                __dso_handle
- .data.__sglue  0x20000014        0xc C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x20000014                __sglue
- .data._impure_ptr
-                0x20000020        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
-                0x20000020                _impure_ptr
- *fill*         0x20000024        0x4 
- .data._impure_data
-                0x20000028      0x120 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
-                0x20000028                _impure_data
- .data.__atexit_recursive_mutex
-                0x20000148        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
-                0x20000148                __atexit_recursive_mutex
- .data.__malloc_sbrk_base
-                0x2000014c        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x2000014c                __malloc_sbrk_base
- .data.__malloc_trim_threshold
-                0x20000150        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x20000150                __malloc_trim_threshold
- *fill*         0x20000154        0x4 
- .data.__malloc_av_
-                0x20000158      0x408 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x20000158                __malloc_av_
-                0x20000560                        . = ALIGN (0x4)
-                0x20000560                        PROVIDE (__preinit_array_start = .)
+                0x20000010                        . = ALIGN (0x4)
+                0x20000010                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x20000560                        PROVIDE (__preinit_array_end = .)
-                0x20000560                        . = ALIGN (0x4)
-                0x20000560                        PROVIDE (__init_array_start = .)
+                0x20000010                        PROVIDE (__preinit_array_end = .)
+                0x20000010                        . = ALIGN (0x4)
+                0x20000010                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
- .init_array.00000
-                0x20000560        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
  *(.init_array)
- .init_array    0x20000564        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
-                0x20000568                        PROVIDE (__init_array_end = .)
-                0x20000568                        . = ALIGN (0x4)
-                0x20000568                        PROVIDE (__fini_array_start = .)
+ .init_array    0x20000010        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x20000014                        PROVIDE (__init_array_end = .)
+                0x20000014                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x20000568        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
-                0x2000056c                        PROVIDE (__fini_array_end = .)
+ .fini_array    0x20000014        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                [!provide]                        PROVIDE (__fini_array_end = .)
  *(.jcr*)
-                0x2000056c                        . = ALIGN (0x4)
-                0x2000056c                        __data_end__ = .
+                0x20000018                        . = ALIGN (0x4)
+                0x20000018                        __data_end__ = .
 
 .tm_clone_table
-                0x2000056c        0x0 load address 0x10001bc8
+                0x20000018        0x0 load address 0x1000029c
  .tm_clone_table
-                0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x20000018        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .tm_clone_table
-                0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+                0x20000018        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
 
-.igot.plt       0x2000056c        0x0 load address 0x10001bc8
- .igot.plt      0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+.igot.plt       0x20000018        0x0 load address 0x1000029c
+ .igot.plt      0x20000018        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
 
-.bss            0x2000056c      0x348
-                0x2000056c                        . = ALIGN (0x4)
-                0x2000056c                        __bss_start__ = .
+.bss            0x20000018       0x1c
+                0x20000018                        . = ALIGN (0x4)
+                0x20000018                        __bss_start__ = .
  *(.bss)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
- .bss           0x2000056c        0x0 ./Debug/main.o
- .bss           0x2000056c        0x0 ./Debug/startup_Musca-B1.o
- .bss           0x2000056c        0x0 ./Debug/system_Musca-B1.o
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
- .bss           0x2000056c        0x0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
  *(.bss.*)
  .bss.completed.1
-                0x2000056c        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- *fill*         0x2000056d        0x3 
- .bss.object.0  0x20000570       0x18 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .bss.__sf      0x20000588      0x138 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x20000588                __sf
- .bss.__stdio_exit_handler
-                0x200006c0        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
-                0x200006c0                __stdio_exit_handler
- .bss.errno     0x200006c4        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
-                0x200006c4                errno
- .bss.__lock___arc4random_mutex
-                0x200006c8        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006c8                __lock___arc4random_mutex
- *fill*         0x200006c9        0x3 
- .bss.__lock___dd_hash_mutex
-                0x200006cc        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006cc                __lock___dd_hash_mutex
- *fill*         0x200006cd        0x3 
- .bss.__lock___tz_mutex
-                0x200006d0        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006d0                __lock___tz_mutex
- *fill*         0x200006d1        0x3 
- .bss.__lock___env_recursive_mutex
-                0x200006d4        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006d4                __lock___env_recursive_mutex
- *fill*         0x200006d5        0x3 
- .bss.__lock___malloc_recursive_mutex
-                0x200006d8        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006d8                __lock___malloc_recursive_mutex
- *fill*         0x200006d9        0x3 
- .bss.__lock___at_quick_exit_mutex
-                0x200006dc        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006dc                __lock___at_quick_exit_mutex
- *fill*         0x200006dd        0x3 
- .bss.__lock___atexit_recursive_mutex
-                0x200006e0        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006e0                __lock___atexit_recursive_mutex
- *fill*         0x200006e1        0x3 
- .bss.__lock___sfp_recursive_mutex
-                0x200006e4        0x1 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
-                0x200006e4                __lock___sfp_recursive_mutex
- *fill*         0x200006e5        0x3 
- .bss.__atexit  0x200006e8        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
-                0x200006e8                __atexit
- .bss.__malloc_current_mallinfo
-                0x200006ec       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x200006ec                __malloc_current_mallinfo
- .bss.__malloc_max_total_mem
-                0x20000714        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x20000714                __malloc_max_total_mem
- .bss.__malloc_max_sbrked_mem
-                0x20000718        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x20000718                __malloc_max_sbrked_mem
- .bss.__malloc_top_pad
-                0x2000071c        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
-                0x2000071c                __malloc_top_pad
- .bss.__atexit0
-                0x20000720      0x190 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
-                0x20000720                __atexit0
- .bss.heap_end.0
-                0x200008b0        0x4 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
+                0x20000018        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ *fill*         0x20000019        0x3 
+ .bss.object.0  0x2000001c       0x18 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  *(COMMON)
-                0x200008b4                        . = ALIGN (0x4)
-                0x200008b4                        __bss_end__ = .
+                0x20000034                        . = ALIGN (0x4)
+                0x20000034                        __bss_end__ = .
 
-.heap           0x200008b4      0xc04
-                0x200008b8                        . = ALIGN (0x8)
- *fill*         0x200008b4        0x4 
-                0x200008b8                        __end__ = .
-                0x200008b8                        PROVIDE (end = .)
-                0x200014b8                        . = (. + __HEAP_SIZE)
- *fill*         0x200008b8      0xc00 
-                0x200014b8                        . = ALIGN (0x8)
-                0x200014b8                        __HeapLimit = .
+.heap           0x20000034      0xc04
+                0x20000038                        . = ALIGN (0x8)
+ *fill*         0x20000034        0x4 
+                0x20000038                        __end__ = .
+                [!provide]                        PROVIDE (end = .)
+                0x20000c38                        . = (. + __HEAP_SIZE)
+ *fill*         0x20000038      0xc00 
+                0x20000c38                        . = ALIGN (0x8)
+                0x20000c38                        __HeapLimit = .
 
 .stack          0x2001fe00      0x200
                 0x2001fe00                        . = ALIGN (0x8)
@@ -651,94 +504,25 @@ LOAD linker stubs
 .ARM.attributes
                 0x00000000       0x30
  .ARM.attributes
-                0x00000000       0x22 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+                0x00000000       0x22 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
  .ARM.attributes
-                0x00000022       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x00000022       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .ARM.attributes
-                0x00000054       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
+                0x00000054       0x34 ./Debug/main.o
  .ARM.attributes
-                0x00000074       0x34 ./Debug/main.o
+                0x00000088       0x34 ./Debug/startup_Musca-B1.o
  .ARM.attributes
-                0x000000a8       0x34 ./Debug/startup_Musca-B1.o
+                0x000000bc       0x34 ./Debug/system_Musca-B1.o
  .ARM.attributes
-                0x000000dc       0x34 ./Debug/system_Musca-B1.o
+                0x000000f0       0x32 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
  .ARM.attributes
-                0x00000110       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
- .ARM.attributes
-                0x00000142       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .ARM.attributes
-                0x00000174       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
- .ARM.attributes
-                0x000001a6       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
- .ARM.attributes
-                0x000001d8       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
- .ARM.attributes
-                0x0000020a       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
- .ARM.attributes
-                0x0000023c       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
- .ARM.attributes
-                0x0000026e       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-impure.o)
- .ARM.attributes
-                0x000002a0       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
- .ARM.attributes
-                0x000002d2       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
- .ARM.attributes
-                0x00000304       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
- .ARM.attributes
-                0x00000336       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
- .ARM.attributes
-                0x00000368       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
- .ARM.attributes
-                0x0000039a       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
- .ARM.attributes
-                0x000003cc       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
- .ARM.attributes
-                0x000003fe       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
- .ARM.attributes
-                0x00000430       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
- .ARM.attributes
-                0x00000462       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
- .ARM.attributes
-                0x00000494       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
- .ARM.attributes
-                0x000004c6       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
- .ARM.attributes
-                0x000004f8       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
- .ARM.attributes
-                0x0000052a       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
- .ARM.attributes
-                0x0000055c       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
- .ARM.attributes
-                0x0000058e       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
- .ARM.attributes
-                0x000005c0       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
- .ARM.attributes
-                0x000005f2       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
- .ARM.attributes
-                0x00000624       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
- .ARM.attributes
-                0x00000656       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
- .ARM.attributes
-                0x00000688       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
- .ARM.attributes
-                0x000006ba       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
- .ARM.attributes
-                0x000006ec       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
- .ARM.attributes
-                0x0000071e       0x32 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
- .ARM.attributes
-                0x00000750       0x22 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+                0x00000122       0x22 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
 
 .comment        0x00000000       0x44
  .comment       0x00000000       0x44 ./Debug/main.o
                                  0x45 (size before relaxing)
  .comment       0x00000044       0x45 ./Debug/startup_Musca-B1.o
  .comment       0x00000044       0x45 ./Debug/system_Musca-B1.o
-
-.debug_line_str
-                0x00000000       0xd7
- .debug_line_str
-                0x00000000       0xd7 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crt0.o
 
 .debug_info     0x00000000      0x8ab
  .debug_info    0x00000000      0x195 ./Debug/main.o
@@ -763,10 +547,10 @@ LOAD linker stubs
  .debug_aranges
                 0x00000040       0x20 ./Debug/system_Musca-B1.o
 
-.debug_line     0x00000000      0x503
- .debug_line    0x00000000      0x185 ./Debug/main.o
- .debug_line    0x00000185      0x1d8 ./Debug/startup_Musca-B1.o
- .debug_line    0x0000035d      0x1a6 ./Debug/system_Musca-B1.o
+.debug_line     0x00000000      0x3e9
+ .debug_line    0x00000000      0x127 ./Debug/main.o
+ .debug_line    0x00000127      0x17a ./Debug/startup_Musca-B1.o
+ .debug_line    0x000002a1      0x148 ./Debug/system_Musca-B1.o
 
 .debug_str      0x00000000      0x416
  .debug_str     0x00000000      0x416 ./Debug/main.o
@@ -774,37 +558,7 @@ LOAD linker stubs
  .debug_str     0x00000416      0x265 ./Debug/startup_Musca-B1.o
  .debug_str     0x00000416      0x2ec ./Debug/system_Musca-B1.o
 
-.debug_frame    0x00000000      0x910
+.debug_frame    0x00000000      0x144
  .debug_frame   0x00000000       0x94 ./Debug/main.o
  .debug_frame   0x00000094       0x60 ./Debug/startup_Musca-B1.o
  .debug_frame   0x000000f4       0x50 ./Debug/system_Musca-B1.o
- .debug_frame   0x00000144       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-exit.o)
- .debug_frame   0x0000016c      0x13c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-findfp.o)
- .debug_frame   0x000002a8       0x34 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fwalk.o)
- .debug_frame   0x000002dc       0x8c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-stdio.o)
- .debug_frame   0x00000368       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-memset.o)
- .debug_frame   0x00000394       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-closer.o)
- .debug_frame   0x000003c0       0x3c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-reent.o)
- .debug_frame   0x000003fc       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lseekr.o)
- .debug_frame   0x00000428       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-readr.o)
- .debug_frame   0x00000454       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-writer.o)
- .debug_frame   0x00000480       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-init.o)
- .debug_frame   0x000004ac       0xb0 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-lock.o)
- .debug_frame   0x0000055c       0x5c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__call_atexit.o)
- .debug_frame   0x000005b8       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-atexit.o)
- .debug_frame   0x000005d8       0x78 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-freer.o)
- .debug_frame   0x00000650       0x48 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mallocr.o)
- .debug_frame   0x00000698       0x30 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-mlock.o)
- .debug_frame   0x000006c8       0x3c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fclose.o)
- .debug_frame   0x00000704       0x70 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fflush.o)
- .debug_frame   0x00000774       0x2c C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sbrkr.o)
- .debug_frame   0x000007a0       0x34 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-fini.o)
- .debug_frame   0x000007d4       0x28 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-sysconf.o)
- .debug_frame   0x000007fc       0x34 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-__atexit.o)
- .debug_frame   0x00000830       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libg.a(libc_a-errno.o)
- .debug_frame   0x00000850       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(close.o)
- .debug_frame   0x00000870       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(lseek.o)
- .debug_frame   0x00000890       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(read.o)
- .debug_frame   0x000008b0       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(sbrk.o)
- .debug_frame   0x000008d0       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(write.o)
- .debug_frame   0x000008f0       0x20 C:/Program Files (Dev)/arm-gnu-toolchain-13.2.rel1-mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp\libnosys.a(_exit.o)
