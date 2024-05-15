@@ -320,7 +320,7 @@ LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/
                 0x00000c00                        __HEAP_SIZE = 0xc00
                 0x00000000                        __STACKSEAL_SIZE = 0x0
 
-.text           0x10000000      0x278
+.text           0x10000000      0x29c
  *(.vectors)
  .vectors       0x10000000       0x68 ./Debug/startup_Musca-B1.o
                 0x10000000                __Vectors
@@ -333,43 +333,44 @@ LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/
                 0x100000ac       0x28 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .text.frame_dummy
                 0x100000d4       0x24 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .text          0x100000f8       0xd0 ./Debug/main.o
-                0x100000f8                config_priority_interrupt
-                0x1000015c                main
-                0x100001b0                Interrupt3_Handler
-                0x100001bc                Interrupt8_Handler
- .text          0x100001c8       0x50 ./Debug/startup_Musca-B1.o
-                0x100001c8                Reset_Handler
-                0x10000208                HardFault_Handler
-                0x10000210                PendSV_Handler
-                0x10000210                NMI_Handler
-                0x10000210                Interrupt5_Handler
-                0x10000210                UsageFault_Handler
-                0x10000210                SysTick_Handler
-                0x10000210                DebugMon_Handler
-                0x10000210                Interrupt7_Handler
-                0x10000210                Interrupt2_Handler
-                0x10000210                Interrupt0_Handler
-                0x10000210                Interrupt4_Handler
-                0x10000210                SecureFault_Handler
-                0x10000210                Default_Handler
-                0x10000210                Interrupt9_Handler
-                0x10000210                Interrupt6_Handler
-                0x10000210                MemManage_Handler
-                0x10000210                SVC_Handler
-                0x10000210                Interrupt1_Handler
-                0x10000210                BusFault_Handler
- .text          0x10000218       0x44 ./Debug/system_Musca-B1.o
-                0x10000218                SystemCoreClockUpdate
-                0x10000234                SystemInit
+ .text          0x100000f8       0xf4 ./Debug/main.o
+                0x100000f8                config_priority_and_enable_interrupt
+                0x1000018c                enable_intterupt_by_sw
+                0x100001ac                main
+                0x100001d2                Interrupt3_Handler
+                0x100001de                Interrupt8_Handler
+ .text          0x100001ec       0x50 ./Debug/startup_Musca-B1.o
+                0x100001ec                Reset_Handler
+                0x1000022c                HardFault_Handler
+                0x10000234                PendSV_Handler
+                0x10000234                NMI_Handler
+                0x10000234                Interrupt5_Handler
+                0x10000234                UsageFault_Handler
+                0x10000234                SysTick_Handler
+                0x10000234                DebugMon_Handler
+                0x10000234                Interrupt7_Handler
+                0x10000234                Interrupt2_Handler
+                0x10000234                Interrupt0_Handler
+                0x10000234                Interrupt4_Handler
+                0x10000234                SecureFault_Handler
+                0x10000234                Default_Handler
+                0x10000234                Interrupt9_Handler
+                0x10000234                Interrupt6_Handler
+                0x10000234                MemManage_Handler
+                0x10000234                SVC_Handler
+                0x10000234                Interrupt1_Handler
+                0x10000234                BusFault_Handler
+ .text          0x1000023c       0x44 ./Debug/system_Musca-B1.o
+                0x1000023c                SystemCoreClockUpdate
+                0x10000258                SystemInit
  *(.init)
- .init          0x1000025c        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
-                0x1000025c                _init
- .init          0x10000260        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+ .init          0x10000280        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+                0x10000280                _init
+ .init          0x10000284        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
  *(.fini)
- .fini          0x10000268        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
-                0x10000268                _fini
- .fini          0x1000026c        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
+ .fini          0x1000028c        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crti.o
+                0x1000028c                _fini
+ .fini          0x10000290        0x8 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -382,106 +383,106 @@ LOAD C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/
  *(.dtors)
  *(.rodata*)
  *(.eh_frame*)
- .eh_frame      0x10000274        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- .eh_frame      0x10000274        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+ .eh_frame      0x10000298        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .eh_frame      0x10000298        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
 
-.glue_7         0x10000278        0x0
- .glue_7        0x10000278        0x0 linker stubs
+.glue_7         0x1000029c        0x0
+ .glue_7        0x1000029c        0x0 linker stubs
 
-.glue_7t        0x10000278        0x0
- .glue_7t       0x10000278        0x0 linker stubs
+.glue_7t        0x1000029c        0x0
+ .glue_7t       0x1000029c        0x0 linker stubs
 
-.vfp11_veneer   0x10000278        0x0
- .vfp11_veneer  0x10000278        0x0 linker stubs
+.vfp11_veneer   0x1000029c        0x0
+ .vfp11_veneer  0x1000029c        0x0 linker stubs
 
-.v4_bx          0x10000278        0x0
- .v4_bx         0x10000278        0x0 linker stubs
+.v4_bx          0x1000029c        0x0
+ .v4_bx         0x1000029c        0x0 linker stubs
 
-.iplt           0x10000278        0x0
- .iplt          0x10000278        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+.iplt           0x1000029c        0x0
+ .iplt          0x1000029c        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+
+.rel.dyn        0x1000029c        0x0
+ .rel.iplt      0x1000029c        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x10000278                        __exidx_start = .
+                0x1000029c                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x10000278                        __exidx_end = .
+                0x1000029c                        __exidx_end = .
 
-.copy.table     0x10000278        0xc
-                0x10000278                        . = ALIGN (0x4)
-                0x10000278                        __copy_table_start__ = .
-                0x10000278        0x4 LONG 0x10000284 __etext
-                0x1000027c        0x4 LONG 0x20000000 __data_start__
-                0x10000280        0x4 LONG 0x6 ((__data_end__ - __data_start__) / 0x4)
-                0x10000284                        __copy_table_end__ = .
+.copy.table     0x1000029c        0xc
+                0x1000029c                        . = ALIGN (0x4)
+                0x1000029c                        __copy_table_start__ = .
+                0x1000029c        0x4 LONG 0x100002a8 __etext
+                0x100002a0        0x4 LONG 0x20000000 __data_start__
+                0x100002a4        0x4 LONG 0x7 ((__data_end__ - __data_start__) / 0x4)
+                0x100002a8                        __copy_table_end__ = .
 
-.rel.dyn        0x10000284        0x0
- .rel.iplt      0x10000284        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+.zero.table     0x100002a8        0x0
+                0x100002a8                        . = ALIGN (0x4)
+                0x100002a8                        __zero_table_start__ = .
+                0x100002a8                        __zero_table_end__ = .
+                0x100002a8                        __etext = ALIGN (0x4)
 
-.zero.table     0x10000284        0x0
-                0x10000284                        . = ALIGN (0x4)
-                0x10000284                        __zero_table_start__ = .
-                0x10000284                        __zero_table_end__ = .
-                0x10000284                        __etext = ALIGN (0x4)
-
-.data           0x20000000       0x18 load address 0x10000284
+.data           0x20000000       0x1c load address 0x100002a8
                 0x20000000                        __data_start__ = .
  *(vtable)
  *(.data)
- .data          0x20000000        0xc ./Debug/main.o
+ .data          0x20000000       0x10 ./Debug/main.o
                 0x20000000                pNVIC_IPRBase
                 0x20000004                pNVIC_ISERBase
                 0x20000008                pNVIC_ISPRBase
- .data          0x2000000c        0x4 ./Debug/system_Musca-B1.o
-                0x2000000c                SystemCoreClock
+                0x2000000c                pNVIC_STIRBase
+ .data          0x20000010        0x4 ./Debug/system_Musca-B1.o
+                0x20000010                SystemCoreClock
  *(.data.*)
-                0x20000010                        . = ALIGN (0x4)
-                0x20000010                        PROVIDE (__preinit_array_start = .)
+                0x20000014                        . = ALIGN (0x4)
+                0x20000014                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x20000010                        PROVIDE (__preinit_array_end = .)
-                0x20000010                        . = ALIGN (0x4)
-                0x20000010                        PROVIDE (__init_array_start = .)
+                0x20000014                        PROVIDE (__preinit_array_end = .)
+                0x20000014                        . = ALIGN (0x4)
+                0x20000014                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x20000010        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
-                0x20000014                        PROVIDE (__init_array_end = .)
-                0x20000014                        . = ALIGN (0x4)
+ .init_array    0x20000014        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x20000018                        PROVIDE (__init_array_end = .)
+                0x20000018                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x20000014        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ .fini_array    0x20000018        0x4 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
  *(.jcr*)
-                0x20000018                        . = ALIGN (0x4)
-                0x20000018                        __data_end__ = .
+                0x2000001c                        . = ALIGN (0x4)
+                0x2000001c                        __data_end__ = .
 
 .tm_clone_table
-                0x20000018        0x0 load address 0x1000029c
+                0x2000001c        0x0 load address 0x100002c4
  .tm_clone_table
-                0x20000018        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x2000001c        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  .tm_clone_table
-                0x20000018        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
+                0x2000001c        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtend.o
 
-.igot.plt       0x20000018        0x0 load address 0x1000029c
- .igot.plt      0x20000018        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+.igot.plt       0x2000001c        0x0 load address 0x100002c4
+ .igot.plt      0x2000001c        0x0 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
 
-.bss            0x20000018       0x1c
-                0x20000018                        . = ALIGN (0x4)
-                0x20000018                        __bss_start__ = .
+.bss            0x2000001c       0x1c
+                0x2000001c                        . = ALIGN (0x4)
+                0x2000001c                        __bss_start__ = .
  *(.bss)
  *(.bss.*)
  .bss.completed.1
-                0x20000018        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
- *fill*         0x20000019        0x3 
- .bss.object.0  0x2000001c       0x18 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+                0x2000001c        0x1 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
+ *fill*         0x2000001d        0x3 
+ .bss.object.0  0x20000020       0x18 C:/Program Files (Dev)/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main/nofp/crtbegin.o
  *(COMMON)
-                0x20000034                        . = ALIGN (0x4)
-                0x20000034                        __bss_end__ = .
+                0x20000038                        . = ALIGN (0x4)
+                0x20000038                        __bss_end__ = .
 
-.heap           0x20000034      0xc04
+.heap           0x20000038      0xc00
                 0x20000038                        . = ALIGN (0x8)
- *fill*         0x20000034        0x4 
                 0x20000038                        __end__ = .
                 [!provide]                        PROVIDE (end = .)
                 0x20000c38                        . = (. + __HEAP_SIZE)
@@ -524,20 +525,20 @@ LOAD linker stubs
  .comment       0x00000044       0x45 ./Debug/startup_Musca-B1.o
  .comment       0x00000044       0x45 ./Debug/system_Musca-B1.o
 
-.debug_info     0x00000000      0x8ab
- .debug_info    0x00000000      0x195 ./Debug/main.o
- .debug_info    0x00000195      0x235 ./Debug/startup_Musca-B1.o
- .debug_info    0x000003ca      0x4e1 ./Debug/system_Musca-B1.o
+.debug_info     0x00000000      0x916
+ .debug_info    0x00000000      0x200 ./Debug/main.o
+ .debug_info    0x00000200      0x235 ./Debug/startup_Musca-B1.o
+ .debug_info    0x00000435      0x4e1 ./Debug/system_Musca-B1.o
 
-.debug_abbrev   0x00000000      0x30a
- .debug_abbrev  0x00000000       0xd8 ./Debug/main.o
- .debug_abbrev  0x000000d8      0x148 ./Debug/startup_Musca-B1.o
- .debug_abbrev  0x00000220       0xea ./Debug/system_Musca-B1.o
+.debug_abbrev   0x00000000      0x326
+ .debug_abbrev  0x00000000       0xf4 ./Debug/main.o
+ .debug_abbrev  0x000000f4      0x148 ./Debug/startup_Musca-B1.o
+ .debug_abbrev  0x0000023c       0xea ./Debug/system_Musca-B1.o
 
-.debug_loc      0x00000000      0x228
- .debug_loc     0x00000000      0x110 ./Debug/main.o
- .debug_loc     0x00000110       0x90 ./Debug/startup_Musca-B1.o
- .debug_loc     0x000001a0       0x88 ./Debug/system_Musca-B1.o
+.debug_loc      0x00000000      0x284
+ .debug_loc     0x00000000      0x16c ./Debug/main.o
+ .debug_loc     0x0000016c       0x90 ./Debug/startup_Musca-B1.o
+ .debug_loc     0x000001fc       0x88 ./Debug/system_Musca-B1.o
 
 .debug_aranges  0x00000000       0x60
  .debug_aranges
@@ -547,18 +548,18 @@ LOAD linker stubs
  .debug_aranges
                 0x00000040       0x20 ./Debug/system_Musca-B1.o
 
-.debug_line     0x00000000      0x3e9
- .debug_line    0x00000000      0x127 ./Debug/main.o
- .debug_line    0x00000127      0x17a ./Debug/startup_Musca-B1.o
- .debug_line    0x000002a1      0x148 ./Debug/system_Musca-B1.o
+.debug_line     0x00000000      0x3ff
+ .debug_line    0x00000000      0x13d ./Debug/main.o
+ .debug_line    0x0000013d      0x17a ./Debug/startup_Musca-B1.o
+ .debug_line    0x000002b7      0x148 ./Debug/system_Musca-B1.o
 
-.debug_str      0x00000000      0x416
- .debug_str     0x00000000      0x416 ./Debug/main.o
-                                0x207 (size before relaxing)
- .debug_str     0x00000416      0x265 ./Debug/startup_Musca-B1.o
- .debug_str     0x00000416      0x2ec ./Debug/system_Musca-B1.o
+.debug_str      0x00000000      0x45f
+ .debug_str     0x00000000      0x45f ./Debug/main.o
+                                0x250 (size before relaxing)
+ .debug_str     0x0000045f      0x265 ./Debug/startup_Musca-B1.o
+ .debug_str     0x0000045f      0x2ec ./Debug/system_Musca-B1.o
 
-.debug_frame    0x00000000      0x144
- .debug_frame   0x00000000       0x94 ./Debug/main.o
- .debug_frame   0x00000094       0x60 ./Debug/startup_Musca-B1.o
- .debug_frame   0x000000f4       0x50 ./Debug/system_Musca-B1.o
+.debug_frame    0x00000000      0x16c
+ .debug_frame   0x00000000       0xbc ./Debug/main.o
+ .debug_frame   0x000000bc       0x60 ./Debug/startup_Musca-B1.o
+ .debug_frame   0x0000011c       0x50 ./Debug/system_Musca-B1.o

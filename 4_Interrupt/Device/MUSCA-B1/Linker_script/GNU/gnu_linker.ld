@@ -104,7 +104,7 @@ ENTRY(Reset_Handler)
 
 SECTIONS
 {
-  .text (READONLY):
+  .text :
   {
     KEEP(*(.vectors))
     *(.text*)
@@ -138,24 +138,24 @@ SECTIONS
    * to indicate where to place these veneers in memory.
    */
 /*
-  .gnu.sgstubs (READONLY):
+  .gnu.sgstubs :
   {
     . = ALIGN(32);
   } > FLASH
 */
-  .ARM.extab (READONLY):
+  .ARM.extab :
   {
     *(.ARM.extab* .gnu.linkonce.armextab.*)
   } > FLASH
 
   __exidx_start = .;
-  .ARM.exidx (READONLY):
+  .ARM.exidx :
   {
     *(.ARM.exidx* .gnu.linkonce.armexidx.*)
   } > FLASH
   __exidx_end = .;
 
-  .copy.table (READONLY):
+  .copy.table :
   {
     . = ALIGN(4);
     __copy_table_start__ = .;
@@ -173,7 +173,7 @@ SECTIONS
     __copy_table_end__ = .;
   } > FLASH
 
-  .zero.table (READONLY):
+  .zero.table :
   {
     . = ALIGN(4);
     __zero_table_start__ = .;

@@ -1,5 +1,5 @@
-#include "stdio.h"
-#include "stdint.h"
+#include <stdio.h>
+#include <stdint.h>
 
 #define IRQ3NUM 3
 #define IRQ8NUM 8
@@ -7,18 +7,34 @@
 uint32_t *pNVIC_IPRBase = (uint32_t *)0xE000E400;
 uint32_t *pNVIC_ISERBase = (uint32_t *)0xE000E100;
 uint32_t *pNVIC_ISPRBase = (uint32_t *)0xE000E200;
+uint32_t *pNVIC_STIRBase = (uint32_t *)0xE000EF00;
 
-void config_priority_interrupt(uint8_t irqNum, uint8_t irqPriorityValue) {
-    // Find iprx
-    uint8_t iprX = irqNum / 4;
-    uint32_t *ipr = pNVIC_IPRBase + iprX;
+void config_priority_and_enable_interrupt(uint8_t irqNum, uint8_t irqPriorityValue) {
+    // Find IPR offset
+    uint8_t iprOffset = irqNum / 4;
+    uint32_t *ipr = pNVIC_IPRBase + iprOffset;
 
-    // Position in iprx
-    uint8_t pos = (irqNum % 4) * 8;
+    // Position in IPRx
+    uint8_t iprPos = (irqNum % 4) * 8;
 
     // Config the priority
-    *ipr &= ~(0xff << pos);             // Clear old value
-    *ipr |= (irqPriorityValue << pos);  // Set new value
+    *ipr &= ~(0xff << iprPos);             // Clear old value
+    *ipr |= (irqPriorityValue << iprPos);  // Set new value
+
+
+    // Find ISER offset
+    uint8_t iserOffset = irqNum / 8;
+    uint32_t *iser = pNVIC_ISERBase + iserOffset;
+
+    // Position in ISERx
+    uint8_t iserPos = irqNum % 32;
+
+    // Enable the interrupt
+    *iser |= (1 << iserPos);
+}
+
+void enable_intterupt_by_sw(uint8_t irqNum) {
+    *pNVIC_STIRBase = (irqNum & 0x1FF);
 }
 
 int main(void)
@@ -26,15 +42,12 @@ int main(void)
     // Hello, Boot sequence is finished. I'm in main function now!!
 
     // Config priority for interrupts
-    config_priority_interrupt(IRQ3NUM, 0xA);
-    config_priority_interrupt(IRQ8NUM, 0xA);
+    config_priority_and_enable_interrupt(IRQ3NUM, 0xA);
+    config_priority_and_enable_interrupt(IRQ8NUM, 0xA);
 
-    // Set the interrupt pending bit in the NVIC IPR
-    *pNVIC_ISPRBase |= (1 << IRQ3NUM);
-
-    // Enable the interrupt in NVIC
-    *pNVIC_ISERBase |= (1 << IRQ3NUM);
-    *pNVIC_ISERBase |= (1 << IRQ8NUM);
+    // Enable the interrupt by software
+    enable_intterupt_by_sw(IRQ3NUM);
+    enable_intterupt_by_sw(IRQ8NUM);
     return 0;
 }
 
