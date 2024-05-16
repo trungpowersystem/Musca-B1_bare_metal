@@ -88,12 +88,12 @@
   32:./Source/startup_Musca-B1.c **** void Interrupt0_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   33:./Source/startup_Musca-B1.c **** void Interrupt1_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   34:./Source/startup_Musca-B1.c **** void Interrupt2_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
-  35:./Source/startup_Musca-B1.c **** void Interrupt3_Handler     (void) __attribute__ ((weak));
+  35:./Source/startup_Musca-B1.c **** void Interrupt3_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   36:./Source/startup_Musca-B1.c **** void Interrupt4_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   37:./Source/startup_Musca-B1.c **** void Interrupt5_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   38:./Source/startup_Musca-B1.c **** void Interrupt6_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   39:./Source/startup_Musca-B1.c **** void Interrupt7_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
-  40:./Source/startup_Musca-B1.c **** void Interrupt8_Handler     (void) __attribute__ ((weak));
+  40:./Source/startup_Musca-B1.c **** void Interrupt8_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   41:./Source/startup_Musca-B1.c **** void Interrupt9_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
   42:./Source/startup_Musca-B1.c **** 
   43:./Source/startup_Musca-B1.c **** #if defined ( __GNUC__ )
@@ -1869,76 +1869,78 @@
  195              	.LFE160:
  197              		.weak	Interrupt9_Handler
  198              		.thumb_set Interrupt9_Handler,Default_Handler
- 199              		.weak	Interrupt7_Handler
- 200              		.thumb_set Interrupt7_Handler,Default_Handler
- 201              		.weak	Interrupt6_Handler
- 202              		.thumb_set Interrupt6_Handler,Default_Handler
- 203              		.weak	Interrupt5_Handler
- 204              		.thumb_set Interrupt5_Handler,Default_Handler
- 205              		.weak	Interrupt4_Handler
- 206              		.thumb_set Interrupt4_Handler,Default_Handler
- 207              		.weak	Interrupt2_Handler
- 208              		.thumb_set Interrupt2_Handler,Default_Handler
- 209              		.weak	Interrupt1_Handler
- 210              		.thumb_set Interrupt1_Handler,Default_Handler
- 211              		.weak	Interrupt0_Handler
- 212              		.thumb_set Interrupt0_Handler,Default_Handler
- 213              		.weak	SysTick_Handler
- 214              		.thumb_set SysTick_Handler,Default_Handler
- 215              		.weak	PendSV_Handler
- 216              		.thumb_set PendSV_Handler,Default_Handler
- 217              		.weak	DebugMon_Handler
- 218              		.thumb_set DebugMon_Handler,Default_Handler
- 219              		.weak	SVC_Handler
- 220              		.thumb_set SVC_Handler,Default_Handler
- 221              		.weak	SecureFault_Handler
- 222              		.thumb_set SecureFault_Handler,Default_Handler
- 223              		.weak	UsageFault_Handler
- 224              		.thumb_set UsageFault_Handler,Default_Handler
- 225              		.weak	BusFault_Handler
- 226              		.thumb_set BusFault_Handler,Default_Handler
- 227              		.weak	MemManage_Handler
- 228              		.thumb_set MemManage_Handler,Default_Handler
- 229              		.weak	NMI_Handler
- 230              		.thumb_set NMI_Handler,Default_Handler
- 231              		.weak	Interrupt8_Handler
- 232              		.weak	Interrupt3_Handler
- 233              	.Letext0:
- 234              		.file 3 "C:/Program Files (Dev)/13.2 Rel1/arm-none-eabi/include/machine/_default_types.h"
- 235              		.file 4 "C:/Program Files (Dev)/13.2 Rel1/arm-none-eabi/include/sys/_stdint.h"
- 236              		.file 5 "./Include/system_Musca-B1.h"
+ 199              		.weak	Interrupt8_Handler
+ 200              		.thumb_set Interrupt8_Handler,Default_Handler
+ 201              		.weak	Interrupt7_Handler
+ 202              		.thumb_set Interrupt7_Handler,Default_Handler
+ 203              		.weak	Interrupt6_Handler
+ 204              		.thumb_set Interrupt6_Handler,Default_Handler
+ 205              		.weak	Interrupt5_Handler
+ 206              		.thumb_set Interrupt5_Handler,Default_Handler
+ 207              		.weak	Interrupt4_Handler
+ 208              		.thumb_set Interrupt4_Handler,Default_Handler
+ 209              		.weak	Interrupt3_Handler
+ 210              		.thumb_set Interrupt3_Handler,Default_Handler
+ 211              		.weak	Interrupt2_Handler
+ 212              		.thumb_set Interrupt2_Handler,Default_Handler
+ 213              		.weak	Interrupt1_Handler
+ 214              		.thumb_set Interrupt1_Handler,Default_Handler
+ 215              		.weak	Interrupt0_Handler
+ 216              		.thumb_set Interrupt0_Handler,Default_Handler
+ 217              		.weak	SysTick_Handler
+ 218              		.thumb_set SysTick_Handler,Default_Handler
+ 219              		.weak	PendSV_Handler
+ 220              		.thumb_set PendSV_Handler,Default_Handler
+ 221              		.weak	DebugMon_Handler
+ 222              		.thumb_set DebugMon_Handler,Default_Handler
+ 223              		.weak	SVC_Handler
+ 224              		.thumb_set SVC_Handler,Default_Handler
+ 225              		.weak	SecureFault_Handler
+ 226              		.thumb_set SecureFault_Handler,Default_Handler
+ 227              		.weak	UsageFault_Handler
+ 228              		.thumb_set UsageFault_Handler,Default_Handler
+ 229              		.weak	BusFault_Handler
+ 230              		.thumb_set BusFault_Handler,Default_Handler
+ 231              		.weak	MemManage_Handler
+ 232              		.thumb_set MemManage_Handler,Default_Handler
+ 233              		.weak	NMI_Handler
+ 234              		.thumb_set NMI_Handler,Default_Handler
+ 235              	.Letext0:
+ 236              		.file 3 "C:/Program Files (Dev)/13.2 Rel1/arm-none-eabi/include/machine/_default_types.h"
+ 237              		.file 4 "C:/Program Files (Dev)/13.2 Rel1/arm-none-eabi/include/sys/_stdint.h"
+ 238              		.file 5 "./Include/system_Musca-B1.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 startup_Musca-B1.c
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:24     .vectors:00000000 __Vectors
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:21     .vectors:00000000 $d
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:58     .text:00000000 Reset_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 NMI_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:149    .text:00000040 HardFault_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 MemManage_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 BusFault_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 UsageFault_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 SecureFault_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 SVC_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 DebugMon_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 PendSV_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 SysTick_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt0_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt1_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt2_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt4_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt5_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt6_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt7_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Interrupt9_Handler
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:52     .text:00000000 $t
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:138    .text:00000038 $d
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:143    .text:00000040 $t
-C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccIwaPSo.s:176    .text:00000048 Default_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:24     .vectors:00000000 __Vectors
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:21     .vectors:00000000 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:58     .text:00000000 Reset_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 NMI_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:149    .text:00000040 HardFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 MemManage_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 BusFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 UsageFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 SecureFault_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 SVC_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 DebugMon_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 PendSV_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 SysTick_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt0_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt1_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt2_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt3_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt4_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt5_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt6_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt7_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt8_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Interrupt9_Handler
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:52     .text:00000000 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:138    .text:00000038 $d
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:143    .text:00000040 $t
+C:\Users\TRUNG~1.NGU\AppData\Local\Temp\ccrJgiwO.s:176    .text:00000048 Default_Handler
 
 UNDEFINED SYMBOLS
 __StackTop
-Interrupt3_Handler
-Interrupt8_Handler
 SystemInit
 main
 __StackLimit

@@ -32,12 +32,12 @@ void SysTick_Handler        (void) __attribute__ ((weak, alias("Default_Handler"
 void Interrupt0_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt1_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt2_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
-void Interrupt3_Handler     (void) __attribute__ ((weak));
+void Interrupt3_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt4_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt5_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt6_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt7_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
-void Interrupt8_Handler     (void) __attribute__ ((weak));
+void Interrupt8_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 void Interrupt9_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
 
 #if defined ( __GNUC__ )
